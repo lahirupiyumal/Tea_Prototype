@@ -1,10 +1,21 @@
 @import 'tailwindcss';
 
-body {
-  margin: 0;
-  min-width: 320px;
-  background: #f6f8f5;
-  color: #173c32;
-  font-family: Georgia, 'Times New Roman', serif;
-  -webkit-font-smoothing: antialiased;
+@layer components {
+  .ph-metrics{ @apply mx-auto mb-7 grid max-w-7xl gap-4 px-5 md:grid-cols-3 md:px-8; }
+  .ph-metrics>div{ @apply flex items-center gap-4 rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm; }
+  .ph-workspace{ @apply mx-auto grid max-w-7xl gap-5 px-5 md:grid-cols-2 md:px-8; }
+  .ph-panel{ @apply rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm; }
+  .ph-panel:hover{ @apply border-lime-300 shadow-md; }
+  .ph-panel-title{ @apply mb-6 flex items-start justify-between; }
+  .ph-panel-title small{ @apply text-[10px] font-bold tracking-widest text-slate-400; }
+  .ph-panel-title h2{ @apply mt-2 font-serif text-2xl font-semibold text-emerald-950; }
+  .ph-panel-title>span{ @apply text-[10px] font-bold tracking-widest text-lime-700; }
+  .upload{ @apply flex h-36 cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-emerald-200 bg-emerald-50/50; }
+  .upload input{ @apply hidden; }.upload-icon{ @apply text-3xl text-lime-700; }.upload strong{ @apply mt-2 text-sm; }.upload small{ @apply text-xs text-slate-400; }
+  .ph-fields{ @apply mt-6 grid grid-cols-2 gap-4; }.ph-fields label{ @apply text-xs font-bold text-slate-600; }.ph-fields div{ @apply mt-2 flex rounded-lg border border-emerald-100 bg-slate-50; }.ph-fields input,.ph-fields select{ @apply w-full bg-transparent p-3 text-sm outline-none; }.ph-fields b{ @apply p-3 text-xs text-slate-400; }
+  .ph-analyse{ @apply mt-6 w-full rounded-lg bg-emerald-900 px-4 py-3 font-bold text-white transition hover:bg-emerald-800; }
+  .score{ @apply flex items-center gap-5 rounded-xl border border-lime-100 bg-lime-50/50 p-5; }.score-ring{ @apply flex h-28 w-28 shrink-0 flex-col items-center justify-center rounded-full border-8 border-lime-200 border-r-lime-700 bg-white; }.score-ring strong{ @apply font-serif text-3xl; }.score h3{ @apply my-2 font-serif text-xl; }.score p{ @apply text-xs text-slate-500; }
+  .stress-list{ @apply mt-6 grid grid-cols-2 gap-3; }.stress-list div{ @apply grid grid-cols-[25px_1fr_auto] items-center rounded-lg bg-slate-50 p-3 text-xs; }
+  .ph-recommend{ @apply mx-auto grid max-w-7xl gap-6 px-5 py-16 md:grid-cols-[1fr_2fr] md:px-8; }.recommend-card{ @apply rounded-2xl bg-emerald-900 px-6 text-white; }.recommend-card>div{ @apply flex gap-4 border-b border-white/10 py-5; }.recommend-card p{ @apply mt-1 text-xs leading-5 text-emerald-100; }
+  .ph-recommend{ @apply block; }.ph-recommend>div:first-child{ @apply hidden; }.ph-recommend .recommend-card{ @apply mx-auto max-w-5xl; }
 }
