@@ -1,12 +1,90 @@
 import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
+const ecosystemFeatures = [
+  {
+    icon: '⌁',
+    title: 'Know your fields',
+    description: 'Real-time crop health and weather insights for better decisions on every plot.',
+    link: 'Explore field insights',
+  },
+  {
+    icon: '◉',
+    title: 'Grow with purpose',
+    description: 'Connect growers, factories, and buyers through one transparent ecosystem.',
+    link: 'Discover the network',
+  },
+  {
+    icon: '⌘',
+    title: 'Trade with confidence',
+    description: 'Traceable quality data that helps Ceylon tea reach the world with full value.',
+    link: 'See the difference',
+  },
+]
+
+const platformStats = [
+  ['360°', 'End-to-end visibility'],
+  ['AI', 'Powered intelligence'],
+  ['100%', 'Made for Ceylon tea'],
+]
+
 function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f4f2e9] font-sans text-emerald-950">
+    <main className="min-h-screen overflow-hidden bg-gradient-to-b from-[#f7f8f2] via-[#f4f2e9] to-white font-sans text-emerald-950">
       <Header />
-      <section className="grid min-h-[650px] items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-12 lg:px-20" id="home"><div><p className="text-xs font-bold tracking-[.2em] text-lime-700">✳ THE FUTURE OF CEYLON TEA</p><h1 className="mt-6 text-5xl font-medium leading-none tracking-tight md:text-7xl">Growing a <i className="text-lime-700">smarter</i><br />future for Sri Lankan tea.</h1><p className="mt-7 max-w-lg text-base leading-7 text-slate-500">AI-powered intelligence for every leaf, every land, and every livelihood. Helping our tea industry grow with clarity, care, and confidence.</p><div className="mt-8 flex flex-wrap items-center gap-6"><button className="rounded-full bg-lime-700 px-6 py-4 font-bold text-white shadow-lg shadow-lime-900/20">Explore the ecosystem ↗</button><a className="font-semibold text-emerald-950" href="#ecosystem">See how it works ↓</a></div><div className="mt-16 flex gap-8"><div className="border-l border-emerald-200 pl-3"><b className="block text-2xl text-emerald-800">360°</b><small className="text-xs text-slate-500">End-to-end visibility</small></div><div className="border-l border-emerald-200 pl-3"><b className="block text-2xl text-emerald-800">AI</b><small className="text-xs text-slate-500">Powered intelligence</small></div><div className="border-l border-emerald-200 pl-3"><b className="block text-2xl text-emerald-800">100%</b><small className="text-xs text-slate-500">Made for Ceylon tea</small></div></div></div><div className="relative h-[470px] rounded-[45%_45%_16px_16px] bg-gradient-to-br from-lime-100 to-lime-600 shadow-2xl shadow-emerald-900/10"><div className="absolute right-1/4 top-12 h-56 w-56 rounded-full bg-amber-200/80"/><div className="absolute right-10 top-1/3 z-10 w-64 rounded-2xl bg-white/90 p-5 shadow-2xl backdrop-blur"><small className="text-[9px] font-bold tracking-widest text-slate-400">FIELD INTELLIGENCE <b className="float-right text-lime-700">● LIVE</b></small><h3 className="my-5 font-serif text-lg">Nuwara Eliya Estate ↗</h3><div className="flex h-16 items-end gap-2 border-b border-slate-200">{[30,50,43,70,58,85,95].map((height,index)=><i key={index} className="w-5 rounded-t bg-lime-500" style={{height:`${height}%`}}/>)}</div><div className="mt-3 flex justify-between text-xs text-slate-500"><span>Harvest health</span><b className="text-emerald-800">94.8% <em className="text-lime-700">+8.2%</em></b></div></div><div className="absolute left-5 top-1/4 z-10 rounded-xl bg-white/90 p-3 text-xs shadow-xl"><b>◒ Optimal harvest window</b><small className="block text-slate-500">Next 3–5 days</small></div><div className="absolute bottom-[-70px] left-[-10%] h-56 w-[120%] rotate-[-7deg] rounded-[50%_50%_0_0] bg-emerald-600"/></div></section>
-      <section className="bg-white px-5 py-20 text-center md:px-12" id="ecosystem"><p className="text-xs font-bold tracking-[.2em] text-lime-700">ONE ECOSYSTEM. EVERY POSSIBILITY.</p><h2 className="my-6 text-4xl font-medium md:text-5xl">From soil to shelf,<br /><i className="text-lime-700">intelligence at every step.</i></h2><div className="mx-auto grid max-w-6xl gap-5 text-left md:grid-cols-3"><article className="rounded-2xl border border-emerald-100 p-7 shadow-sm"><b className="text-3xl text-lime-700">⌁</b><h3 className="my-5 font-serif text-xl">Know your fields</h3><p className="mb-6 text-sm leading-6 text-slate-500">Real-time crop health and weather insights for better decisions on every plot.</p><a className="text-xs font-bold text-lime-700" href="#ecosystem">Explore field insights →</a></article><article className="rounded-2xl border border-emerald-100 p-7 shadow-sm"><b className="text-3xl text-lime-700">◉</b><h3 className="my-5 font-serif text-xl">Grow with purpose</h3><p className="mb-6 text-sm leading-6 text-slate-500">Connect growers, factories, and buyers through one transparent ecosystem.</p><a className="text-xs font-bold text-lime-700" href="#ecosystem">Discover the network →</a></article><article className="rounded-2xl border border-emerald-100 p-7 shadow-sm"><b className="text-3xl text-lime-700">⌘</b><h3 className="my-5 font-serif text-xl">Trade with confidence</h3><p className="mb-6 text-sm leading-6 text-slate-500">Traceable quality data that helps Ceylon tea reach the world with full value.</p><a className="text-xs font-bold text-lime-700" href="#ecosystem">See the difference →</a></article></div></section>
+
+      <section className="mx-auto grid min-h-[620px] max-w-7xl items-center px-5 py-16 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-16 lg:px-12" id="home">
+        <div>
+          <p className="text-xs font-bold tracking-[.2em] text-lime-700">✳ THE FUTURE OF CEYLON TEA</p>
+          <h1 className="mt-6 max-w-3xl text-5xl font-medium leading-[.98] tracking-tight md:text-7xl">
+            Growing a <i className="text-lime-700">smarter</i>
+            <br />
+            future for Sri Lankan tea.
+          </h1>
+          <p className="mt-7 max-w-lg text-base leading-7 text-slate-500">
+            AI-powered intelligence for every leaf, every land, and every livelihood. Helping our tea industry grow with clarity, care, and confidence.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-6">
+            <a className="rounded-full bg-emerald-950 px-6 py-4 font-bold text-white shadow-lg shadow-emerald-900/20 transition hover:bg-emerald-800" href="#ecosystem">
+              Explore the ecosystem ↗
+            </a>
+            <a className="font-semibold text-emerald-950" href="#ecosystem">See how it works ↓</a>
+          </div>
+
+          <div className="mt-16 flex flex-wrap gap-8">
+            {platformStats.map(([value, label]) => (
+              <div className="border-l border-emerald-200 pl-3" key={label}>
+                <b className="block text-2xl text-emerald-800">{value}</b>
+                <small className="text-xs text-slate-500">{label}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden lg:block" aria-hidden="true" />
+      </section>
+
+      <section className="bg-white px-5 py-24 text-center md:px-12" id="ecosystem">
+        <p className="text-xs font-bold tracking-[.2em] text-lime-700">ONE ECOSYSTEM. EVERY POSSIBILITY.</p>
+        <h2 className="mx-auto my-6 max-w-2xl text-4xl font-medium leading-tight md:text-5xl">
+          From soil to shelf,
+          <br />
+          <i className="text-lime-700">intelligence at every step.</i>
+        </h2>
+
+        <div className="mx-auto grid max-w-6xl gap-5 text-left md:grid-cols-3">
+          {ecosystemFeatures.map((feature) => (
+            <article className="group rounded-2xl border border-emerald-100 bg-[#fbfcf8] p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-lime-300 hover:shadow-xl" key={feature.title}>
+              <b className="text-3xl text-lime-700">{feature.icon}</b>
+              <h3 className="my-5 font-serif text-xl">{feature.title}</h3>
+              <p className="mb-6 text-sm leading-6 text-slate-500">{feature.description}</p>
+              <a className="text-xs font-bold text-lime-700" href="#ecosystem">{feature.link} →</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <Footer />
     </main>
   )

@@ -18,4 +18,6 @@
   .stress-list{ @apply mt-6 grid grid-cols-2 gap-3; }.stress-list div{ @apply grid grid-cols-[25px_1fr_auto] items-center rounded-lg bg-slate-50 p-3 text-xs; }
   .ph-recommend{ @apply mx-auto grid max-w-7xl gap-6 px-5 py-16 md:grid-cols-[1fr_2fr] md:px-8; }.recommend-card{ @apply rounded-2xl bg-emerald-900 px-6 text-white; }.recommend-card>div{ @apply flex gap-4 border-b border-white/10 py-5; }.recommend-card p{ @apply mt-1 text-xs leading-5 text-emerald-100; }
   .ph-recommend{ @apply block; }.ph-recommend>div:first-child{ @apply hidden; }.ph-recommend .recommend-card{ @apply mx-auto max-w-5xl; }
+  .home .relative.h-\[470px\]{ @apply hidden; }
+  .home #home > div:nth-child(2){ @apply hidden; }
 }
