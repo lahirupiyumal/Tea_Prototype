@@ -7,6 +7,7 @@ import YieldPrediction from './components/component2/YieldPrediction'
 import HarvestQuality from './components/component2/HarvestQuality'
 import DensityPlanning from './components/component2/DensityPlanning'
 import Dashboard from './components/dashboard'
+import Component4 from './components/component4'
 
 function App() {
   return <BrowserRouter><Routes>
@@ -19,6 +20,7 @@ function App() {
     <Route path="/yield-prediction" element={<YieldPrediction />} />
     <Route path="/harvest-quality" element={<HarvestQuality />} />
     <Route path="/density-planning" element={<DensityPlanning />} />
+    <Route path="/component4/*" element={<Component4 />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></BrowserRouter>
 }
