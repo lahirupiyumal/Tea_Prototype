@@ -8,13 +8,16 @@ function Header() {
       <div className="hidden gap-6 text-sm font-semibold text-emerald-950 md:flex">
         <a href="/">Platform</a>
         <a href="/component2">Plantation Health</a>
-        <a href="/harvest-readiness">Harvest Readiness</a>
-        <a href="/yield-prediction">Yield Prediction</a>
+        {/* <a href="/harvest-readiness">Harvest Readiness</a> */}
+        {/* <a href="/yield-prediction">Yield Prediction</a> */}
         <a href="/harvest-quality">Harvest Quality</a>
         <a href="/density-planning">Density Planning</a>
-        <a href="/#about">About us</a>
+        {/* <a href="/#about">About us</a> */}
       </div>
       <div className="flex items-center gap-3">
+        <a className="rounded-full bg-lime-300 px-4 py-3 text-xs font-bold text-emerald-950 shadow-lg hover:-translate-y-0.5" href="/harvest-intelligent">
+          Harvest Intelligence
+        </a>
         <a className="rounded-full bg-emerald-950 px-4 py-3 text-xs font-bold text-white shadow-lg shadow-emerald-950/15 hover:-translate-y-0.5" href="/dashboard">
           Open dashboard
         </a>

@@ -213,12 +213,6 @@ function Home() {
 
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <a
-                className="rounded-full bg-[#1d7a59] px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-emerald-900/10 transition hover:bg-[#155c42]"
-                href="/dashboard"
-              >
-                AI-Powered Tea Plantation<br />Health, Harvest &amp; Quality Intelligence System
-              </a>
-              <a
                 className="text-sm font-semibold text-[#153c31] underline decoration-[#9ad9b6]/70 underline-offset-4 hover:decoration-[#1d7a59]"
                 href="#ecosystem"
               >
@@ -228,7 +222,7 @@ function Home() {
           </div>
 
           {/* Signature element — floating live estate ledger */}
-          <div className="relative hidden h-[480px] lg:block">
+          <div className="hidden">
             <div className="float-slow absolute inset-x-6 top-4 rounded-2xl border border-emerald-100 bg-white/95 p-6 shadow-2xl shadow-emerald-900/5 backdrop-blur">
               <div className="flex items-center justify-between border-b border-[#dfeae4] pb-4">
                 <span className="font-['Space_Grotesk',sans-serif] text-sm font-medium">Live estate ledger</span>

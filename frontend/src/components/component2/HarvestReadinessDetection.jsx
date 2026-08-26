@@ -144,7 +144,9 @@ function HarvestReadinessDetection() {
         {/* ── Live estate gauge + readiness signals ───────────────── */}
         <div className="mt-5 grid gap-5 lg:grid-cols-[1.15fr_.85fr]">
           {/* Gauge card */}
-          <div className="rounded-sm p-7 text-white md:p-10" style={{ background: INK }}>
+          <div className="relative overflow-hidden rounded-2xl border border-[#315640] p-7 text-white shadow-xl md:p-10" style={{ background: 'linear-gradient(135deg, #1F3D2E 0%, #163025 100%)' }}>
+            <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full border border-[#7EC151]/15" aria-hidden="true" />
+            <div className="pointer-events-none absolute -right-10 -top-14 h-44 w-44 rounded-full border border-[#7EC151]/10" aria-hidden="true" />
             <div className="flex items-start justify-between">
               <div>
                 <p className="hr-mono text-[11px] tracking-[.25em]" style={{ color: GOLD }}>
@@ -155,15 +157,15 @@ function HarvestReadinessDetection() {
                 </h2>
               </div>
               <span
-                className="hr-mono flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] tracking-widest"
-                style={{ background: 'rgba(246,243,233,0.1)', color: '#BFE0A8' }}
+                className="hr-mono flex items-center gap-1.5 rounded-full border border-[#7EC151]/20 bg-[#7EC151]/10 px-4 py-2 text-[10px] tracking-widest"
+                style={{ color: '#BFE0A8' }}
               >
                 <span className="h-1.5 w-1.5 rounded-full" style={{ background: '#8FD16A' }} />
                 LIVE
               </span>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-10">
+            <div className="relative mt-10 flex flex-wrap items-center gap-10">
               {/* Gauge dial */}
               <div className="relative">
                 <svg width="200" height="120" viewBox="0 0 200 110">
@@ -197,13 +199,13 @@ function HarvestReadinessDetection() {
                 </div>
               </div>
 
-              <div className="h-16 w-px" style={{ background: 'rgba(246,243,233,0.15)' }} />
+              <div className="h-20 w-px bg-white/15" />
 
               <div>
                 <p className="hr-mono text-[10px] uppercase tracking-[.2em]" style={{ color: GOLD }}>
                   Recommended window
                 </p>
-                <strong className="hr-display mt-2 block text-2xl font-medium" style={{ color: PAPER }}>
+                <strong className="hr-display mt-2 block text-3xl font-medium" style={{ color: PAPER }}>
                   Next 3–5 days
                 </strong>
                 <small className="text-sm text-white/60">Conditions are favourable</small>
