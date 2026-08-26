@@ -11,23 +11,10 @@ import Dashboard from './components/dashboard'
 import Component4 from './components/component4'
 
 function App() {
-<<<<<<< HEAD
-  if (window.location.pathname === '/component1' || window.location.pathname === '/disease-intelligence') {
-    return <Component1 />
-  }
-
-  if (window.location.pathname === '/component2' || window.location.pathname === '/plantation-health') {
-    return <Component2 />
-  }
-
-  if (window.location.pathname === '/harvest-readiness') {
-    return <HarvestReadinessDetection />
-  }
-
-  return <Home />
-=======
   return <BrowserRouter><Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/component1/*" element={<Component1 />} />
+    <Route path="/disease-intelligence/*" element={<Component1 />} />
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/component2" element={<Component2 />} />
     <Route path="/plantation-health" element={<Component2 />} />
@@ -39,7 +26,6 @@ function App() {
     <Route path="/component4/*" element={<Component4 />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></BrowserRouter>
->>>>>>> 4ae3b886bdc79fa59711f27a61d3229718a9ea08
 }
 
 export default App;
