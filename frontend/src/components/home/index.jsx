@@ -32,6 +32,9 @@ const ecosystemFeatures = [
       'Real-time crop health, soil, and weather signals so every plot gets the decision it actually needs.',
     link: 'Explore field insights',
     size: 'lg',
+    eyebrow: '01 / FIELD INTELLIGENCE',
+    stat: '24/7',
+    statLabel: 'signal coverage',
   },
   {
     marker: 'Network',
@@ -39,6 +42,9 @@ const ecosystemFeatures = [
     description: 'Growers, factories, and buyers on one transparent ledger of quality.',
     link: 'Discover the network',
     size: 'sm',
+    eyebrow: '02 / SHARED NETWORK',
+    stat: '1',
+    statLabel: 'source of truth',
   },
   {
     marker: 'Market',
@@ -46,6 +52,9 @@ const ecosystemFeatures = [
     description: 'Traceable data that lets Ceylon tea earn the price it deserves.',
     link: 'See the difference',
     size: 'sm',
+    eyebrow: '03 / TRACEABLE MARKET',
+    stat: '100%',
+    statLabel: 'lot visibility',
   },
 ]
 
@@ -256,28 +265,28 @@ function Home() {
         </div>
 
         {/* ECOSYSTEM — bento grid */}
-        <section className="relative overflow-hidden bg-white px-5 py-24 md:px-12" id="ecosystem">
-          <div className="pointer-events-none absolute -right-24 top-20 h-64 w-64 rounded-full border border-lime-100" aria-hidden="true" />
-          <div className="pointer-events-none absolute -right-16 top-28 h-48 w-48 rounded-full border border-lime-100" aria-hidden="true" />
+        <section className="relative overflow-hidden bg-[#f8fbf7] px-5 py-24 md:px-12 md:py-32" id="ecosystem">
+          <div className="pointer-events-none absolute -right-24 top-12 h-72 w-72 rounded-full border border-[#dcefc9]" aria-hidden="true" />
+          <div className="pointer-events-none absolute -right-12 top-24 h-48 w-48 rounded-full border border-[#dcefc9]" aria-hidden="true" />
           <div className="mx-auto max-w-6xl">
-            <h2 className="mx-auto my-6 max-w-2xl font-['Space_Grotesk',sans-serif] text-4xl font-semibold leading-tight text-[#153c31] md:text-5xl">
+            <div className="mb-5 flex items-center gap-3 font-['JetBrains_Mono',monospace] text-[11px] font-semibold tracking-[.22em] text-[#1d7a59]"><span className="h-px w-10 bg-[#7ec151]" /> THE TEACORE ECOSYSTEM</div>
+            <h2 className="my-6 max-w-3xl font-['Space_Grotesk',sans-serif] text-4xl font-semibold leading-[1.05] tracking-tight text-[#153c31] md:text-6xl">
               From soil to shelf, <span className="text-[#1d7a59]">intelligence at every step.</span>
             </h2>
+            <p className="max-w-xl text-base leading-7 text-[#60766d]">One connected view for the people who grow, make, and move Ceylon tea.</p>
 
             <div className="mt-14 grid gap-5 md:grid-cols-2">
               {ecosystemFeatures.map((feature) => (
                 <article
                   key={feature.title}
-                  className={`group relative overflow-hidden rounded-2xl border border-emerald-100 bg-emerald-50 p-8 transition duration-300 hover:border-[#6EE7B7]/40 hover:bg-white ${
+                  className={`group relative overflow-hidden rounded-[1.5rem] border border-[#dce9df] bg-white p-8 shadow-[0_12px_40px_rgba(21,60,49,.04)] transition duration-300 hover:-translate-y-1 hover:border-[#a9d5a0] hover:shadow-[0_20px_50px_rgba(21,60,49,.09)] md:p-10 ${
                     feature.size === 'lg' ? 'md:col-span-2 md:flex md:items-center md:justify-between md:gap-10' : ''
                   }`}
                 >
                   <div className={feature.size === 'lg' ? 'max-w-md' : ''}>
-                    <span className="font-['JetBrains_Mono',monospace] text-xs tracking-widest text-[#1d7a59]">
-                      {feature.marker.toUpperCase()}
-                    </span>
+                    <div className="mb-8 flex items-center justify-between"><span className="font-['JetBrains_Mono',monospace] text-[10px] font-semibold tracking-[.16em] text-[#1d7a59]">{feature.eyebrow}</span><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf7e9] text-lg text-[#1d7a59]">{feature.size === 'lg' ? '⌁' : feature.marker === 'Network' ? '↗' : '◌'}</span></div>
                     <h3 className="my-4 font-['Space_Grotesk',sans-serif] text-2xl text-[#153c31]">{feature.title}</h3>
-                    <p className="mb-6 text-sm leading-6 text-[#5b6f68]">{feature.description}</p>
+                    <p className="mb-8 max-w-lg text-sm leading-6 text-[#5b6f68]">{feature.description}</p>
                     <a
                       className="text-xs font-semibold tracking-wide text-[#1d7a59] underline decoration-[#a8e3b6]/80 underline-offset-4 group-hover:decoration-[#1d7a59]"
                       href="#ecosystem"
@@ -297,6 +306,7 @@ function Home() {
                       ))}
                     </div>
                   )}
+                  {feature.size !== 'lg' && <div className="mt-8 flex items-end justify-between border-t border-[#e5eee8] pt-5"><span className="font-['Space_Grotesk',sans-serif] text-3xl font-semibold text-[#153c31]">{feature.stat}</span><span className="font-['JetBrains_Mono',monospace] text-[10px] uppercase tracking-widest text-[#789087]">{feature.statLabel}</span></div>}
                 </article>
               ))}
             </div>
