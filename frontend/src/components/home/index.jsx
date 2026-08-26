@@ -102,35 +102,15 @@ function LoadingScreen({ progress }) {
       }`}
       role="status"
       aria-live="polite"
-      aria-label="Loading Ceylon Tea Intelligence Platform"
+      aria-label="Loading TeaCore"
     >
-      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" className="mb-7">
-        <circle cx="36" cy="36" r="30" stroke="#d9eadb" strokeWidth="1.5" />
-        <circle
-          cx="36"
-          cy="36"
-          r="30"
-          stroke="#1d7a59"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeDasharray={2 * Math.PI * 30}
-          strokeDashoffset={2 * Math.PI * 30 * (1 - progress / 100)}
-          transform="rotate(-90 36 36)"
-          className="transition-[stroke-dashoffset] duration-150 ease-linear motion-reduce:transition-none"
+      <img src="/teawise-logo.png" alt="TeaCore logo" className="h-24 w-24 object-contain" />
+      <div className="mt-8 h-1.5 w-48 overflow-hidden rounded-full bg-[#d9eadb]" aria-hidden="true">
+        <div
+          className="h-full rounded-full bg-[#1d7a59] transition-[width] duration-150 ease-linear motion-reduce:transition-none"
+          style={{ width: `${Math.min(progress, 100)}%` }}
         />
-        <path
-          d="M36 50c9-4 14-12 14-21 0-3-.6-6-1.7-8.6C45 24 39 27 36 34c-3-7-9-10-12.3-13.6C22.6 23 22 26 22 29c0 9 5 17 14 21z"
-          fill="#1d7a59"
-          opacity="0.9"
-        />
-      </svg>
-      <p className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[.28em] text-[#1d6f4d]">
-        CALIBRATING FIELD DATA
-      </p>
-      <p className="mt-3 font-['JetBrains_Mono',monospace] text-3xl font-medium text-[#123d31]">
-        {Math.min(progress, 100)}
-        <span className="text-[#1d7a59]">%</span>
-      </p>
+      </div>
     </div>
   )
 }
