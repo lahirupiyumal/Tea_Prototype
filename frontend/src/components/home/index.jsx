@@ -49,6 +49,9 @@ function Home() {
             <a className="rounded-full bg-emerald-950 px-6 py-4 font-bold text-white shadow-lg shadow-emerald-900/20 transition hover:bg-emerald-800" href="#ecosystem">
               Explore the ecosystem ↗
             </a>
+            <a className="rounded-full border border-emerald-950 px-6 py-4 font-bold text-emerald-950 transition hover:bg-emerald-950 hover:text-white" href="/component1">
+              Open Disease Intelligence →
+            </a>
             <a className="font-semibold text-emerald-950" href="#ecosystem">See how it works ↓</a>
           </div>
 
