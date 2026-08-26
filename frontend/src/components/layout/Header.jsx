@@ -2,8 +2,8 @@ function Header() {
   return (
     <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
       <a className="text-lg font-bold tracking-[.18em] text-emerald-950" href="/">
-        <img className="mr-2 inline-block h-10 w-10 object-contain align-middle" src="/teawise-logo.png" alt="TeaWise logo" />
-        TEA<span className="text-lime-700">WISE</span>
+        <img className="mr-2 inline-block h-10 w-10 object-contain align-middle" src="/teawise-logo.png" alt="TeaCore logo" />
+        Tea<span className="text-lime-700">Core</span>
       </a>
       <div className="hidden gap-6 text-sm font-semibold text-emerald-950 md:flex">
         <a href="/">Platform</a>

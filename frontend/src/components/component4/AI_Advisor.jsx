@@ -65,12 +65,12 @@ export default function AIAdvisor() {
 				<section className="advisor-chat card">
 					<div className="advisor-chat-header">
 						<div className="advisor-avatar"><Bot size={21} /></div>
-						<div><strong>TeaWise AI</strong><span>Export intelligence assistant</span></div>
+						<div><strong>TeaCore AI</strong><span>Export intelligence assistant</span></div>
 						<button className="advisor-clear" type="button" onClick={() => setMessages([initialMessage])} aria-label="Clear conversation" title="Clear conversation"><X size={16} /></button>
 					</div>
 
 					<div className="advisor-messages" aria-live="polite">
-						{messages.map((message, index) => <div className={`advisor-message ${message.role}`} key={`${message.role}-${index}`}><div className="message-icon">{message.role === "assistant" ? <Bot size={14} /> : <User size={14} />}</div><div><span>{message.role === "assistant" ? "TeaWise AI" : "You"}</span><p>{message.text}</p></div></div>)}
+						{messages.map((message, index) => <div className={`advisor-message ${message.role}`} key={`${message.role}-${index}`}><div className="message-icon">{message.role === "assistant" ? <Bot size={14} /> : <User size={14} />}</div><div><span>{message.role === "assistant" ? "TeaCore AI" : "You"}</span><p>{message.text}</p></div></div>)}
 					</div>
 
 					<form className="advisor-input-row" onSubmit={handleSubmit}>

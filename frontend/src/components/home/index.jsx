@@ -198,11 +198,6 @@ function Home() {
           <div className="pointer-events-none absolute right-8 top-10 select-none" aria-hidden="true" />
 
           <div className="relative z-10">
-            <p className="flex items-center gap-2 font-['JetBrains_Mono',monospace] text-[11px] font-medium tracking-[.24em] text-[#1d7a59]">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#1d7a59]" />
-              CEYLON TEA INTELLIGENCE PLATFORM
-            </p>
-
             <h1 className="mt-7 max-w-xl font-['Space_Grotesk',sans-serif] text-5xl font-semibold leading-[1.05] tracking-tight text-[#153c31] md:text-6xl">
               Every leaf,
               <br />
