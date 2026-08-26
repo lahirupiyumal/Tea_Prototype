@@ -214,9 +214,9 @@ function Home() {
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <a
                 className="rounded-full bg-[#1d7a59] px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-emerald-900/10 transition hover:bg-[#155c42]"
-                href="#ecosystem"
+                href="/dashboard"
               >
-                Explore the platform
+                AI-Powered Tea Plantation<br />Health, Harvest &amp; Quality Intelligence System
               </a>
               <a
                 className="text-sm font-semibold text-[#153c31] underline decoration-[#9ad9b6]/70 underline-offset-4 hover:decoration-[#1d7a59]"

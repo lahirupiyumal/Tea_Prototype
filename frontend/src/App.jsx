@@ -4,8 +4,13 @@ import HarvestReadinessDetection from './components/component2/HarvestReadinessD
 import YieldPrediction from './components/component2/YieldPrediction'
 import HarvestQuality from './components/component2/HarvestQuality'
 import DensityPlanning from './components/component2/DensityPlanning'
+import Dashboard from './components/dashboard'
 
 function App() {
+  if (window.location.pathname === '/dashboard') {
+    return <Dashboard />
+  }
+
   if (window.location.pathname === '/component2' || window.location.pathname === '/plantation-health') {
     return <Component2 />
   }

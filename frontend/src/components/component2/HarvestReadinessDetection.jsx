@@ -6,11 +6,10 @@ function HarvestReadinessDetection() {
     <main className="min-h-screen bg-slate-50 font-sans text-emerald-950">
       <Header />
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
-        <p className="text-xs font-bold tracking-[.2em] text-lime-700">STEP 03 / HARVEST INTELLIGENCE</p>
+        {/* <p className="text-xs font-bold tracking-[.2em] text-lime-700">STEP 03 / HARVEST INTELLIGENCE</p>
         <div className="mt-4 flex flex-wrap items-end justify-between gap-6">
           <div><h1 className="font-serif text-4xl font-semibold md:text-5xl">Harvest readiness detection</h1><p className="mt-4 max-w-2xl leading-7 text-slate-500">Use AI-powered field signals to identify the ideal harvest window and protect the quality of every tea leaf.</p></div>
-          <span className="rounded-full border border-lime-200 bg-white px-4 py-2 text-xs font-bold text-lime-700">● Analysis ready</span>
-        </div>
+        </div> */}
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[.9fr_1.1fr]">
           <label className="flex min-h-52 cursor-pointer flex-col items-center justify-center rounded-3xl border-2 border-dashed border-emerald-200 bg-white p-8 text-center shadow-sm transition hover:border-lime-400 hover:bg-lime-50/40"><input className="hidden" type="file" accept="image/*" /><span className="text-4xl text-lime-700">⌁</span><strong className="mt-4 text-lg">Upload tea bush image</strong><span className="mt-2 text-sm text-slate-500">PNG, JPG or WEBP · Max 10MB</span></label>

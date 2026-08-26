@@ -9,11 +9,10 @@ function YieldPrediction() {
     <main className="min-h-screen bg-slate-50 font-sans text-emerald-950">
       <Header />
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
-        <p className="text-xs font-bold tracking-[.2em] text-lime-700">STEP 04 / HARVEST INTELLIGENCE</p>
+        {/* <p className="text-xs font-bold tracking-[.2em] text-lime-700">STEP 04 / HARVEST INTELLIGENCE</p>
         <div className="mt-4 flex flex-wrap items-end justify-between gap-6">
           <div><h1 className="font-serif text-4xl font-semibold md:text-5xl">Intelligent harvest scheduling &amp; expected yield prediction</h1><p className="mt-4 max-w-2xl leading-7 text-slate-500">AI combines field readiness, climate, weather and historical data to identify the best harvest window and predict expected yield.</p></div>
-          <span className="rounded-full border border-lime-200 bg-white px-4 py-2 text-xs font-bold text-lime-700">● AI engine ready</span>
-        </div>
+        </div> */}
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[.85fr_1.15fr]">
           <div className="rounded-3xl border border-emerald-100 bg-white p-7 shadow-sm">
