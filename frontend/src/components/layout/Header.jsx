@@ -15,6 +15,9 @@ function Header() {
         {/* <a href="/#about">About us</a> */}
       </div>
       <div className="flex items-center gap-3">
+        <a className="hidden rounded-full px-3 py-3 text-xs font-bold text-emerald-950 hover:bg-emerald-50 sm:block" href="/login">
+          Sign in
+        </a>
         <a className="rounded-full bg-lime-300 px-4 py-3 text-xs font-bold text-emerald-950 shadow-lg hover:-translate-y-0.5" href="/harvest-intelligent">
           Harvest Intelligence
         </a>

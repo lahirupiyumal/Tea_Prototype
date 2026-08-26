@@ -9,10 +9,12 @@ import HarvestQuality from './components/component2/HarvestQuality'
 import DensityPlanning from './components/component2/DensityPlanning'
 import Dashboard from './components/dashboard'
 import Component4 from './components/component4'
+import Login from './components/auth/Login'
 
 function App() {
   return <BrowserRouter><Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/login" element={<Login />} />
     <Route path="/component1/*" element={<Component1 />} />
     <Route path="/disease-intelligence/*" element={<Component1 />} />
     <Route path="/dashboard" element={<Dashboard />} />
