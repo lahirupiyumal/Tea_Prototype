@@ -15,8 +15,8 @@ function Header() {
         <a href="/#about">About us</a>
       </div>
       <div className="flex items-center gap-3">
-        <a className="rounded-full bg-emerald-950 px-4 py-3 text-xs font-bold text-white shadow-lg shadow-emerald-950/15" href="/harvest-quality">
-          Density planning
+        <a className="rounded-full bg-emerald-950 px-4 py-3 text-xs font-bold text-white shadow-lg shadow-emerald-950/15 hover:-translate-y-0.5" href="/dashboard">
+          Open dashboard
         </a>
       </div>
     </nav>

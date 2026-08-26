@@ -13,10 +13,10 @@ import Footer from '../layout/Footer'
 
 const INK = '#1F3D2E'
 const INK_DARK = '#152A1E'
-const PAPER = '#F6F3E9'
-const RULE = '#DDD5C0'
-const GOLD = '#B9872E'
-const GOLD_DEEP = '#93691F'
+const PAPER = '#FFFFFF'
+const RULE = '#E5EEE8'
+const GOLD = '#7EC151'
+const GOLD_DEEP = '#568F32'
 const RUST = '#A6432F'
 const SAGE = '#5E7E52'
 
@@ -76,7 +76,7 @@ function PlantationHealth() {
 
       {/* ── Page intro ─────────────────────────────────────────────── */}
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-8 md:px-8">
-        <p className="ph-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
+        {/* <p className="ph-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
           FIELD RECORD · PLANTATION INTELLIGENCE
         </p>
         <h1 className="ph-display mt-3 text-4xl font-medium leading-tight md:text-5xl" style={{ color: INK_DARK }}>
@@ -86,7 +86,7 @@ function PlantationHealth() {
           Enter today&rsquo;s field conditions and let the estate ledger grade
           your plantation&rsquo;s condition — the way a grader would seal a
           chest of tea.
-        </p>
+        </p> */}
       </div>
 
       {/* ── Ledger workspace ───────────────────────────────────────── */}

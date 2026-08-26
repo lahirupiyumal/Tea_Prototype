@@ -50,11 +50,11 @@ import Footer from '../layout/Footer'
 
 const INK = '#1F3D2E'
 const INK_DARK = '#152A1E'
-const PAPER = '#F6F3E9'
-const RULE = '#DDD5C0'
-const GOLD = '#B9872E'
-const GOLD_DEEP = '#93691F'
-const SAGE = '#5E7E52'
+const PAPER = '#FFFFFF'
+const RULE = '#E5EEE8'
+const GOLD = '#7EC151'
+const GOLD_DEEP = '#568F32'
+const SAGE = '#568F32'
 const SKY = '#4E7A8C'
 
 const READINESS_SCORE = 94
@@ -91,7 +91,7 @@ function HarvestReadinessDetection() {
 
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         {/* ── Intro ─────────────────────────────────────────────── */}
-        <p className="hr-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
+        {/* <p className="hr-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
           STEP 03 · HARVEST INTELLIGENCE
         </p>
         <div className="mt-3 max-w-2xl">
@@ -102,7 +102,7 @@ function HarvestReadinessDetection() {
             Field signals read from bush imagery mark the ideal harvest
             window and protect the quality of every leaf.
           </p>
-        </div>
+        </div> */}
 
         {/* ── Upload + what the model evaluates ───────────────────── */}
         <div className="mt-10 grid gap-5 lg:grid-cols-[.9fr_1.1fr]">

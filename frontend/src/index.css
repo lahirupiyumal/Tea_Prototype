@@ -1,5 +1,20 @@
 @import 'tailwindcss';
 
+:root { --tw-primary: #7EC151; --tw-primary-dark: #568F32; --tw-ink: #183126; --tw-line: #E5EEE8; --tw-soft: #F6FAF4; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; color: var(--tw-ink); }
+.bg-emerald-950, .bg-emerald-900 { background-color: var(--tw-ink) !important; }
+.text-emerald-950 { color: var(--tw-ink) !important; }
+.text-lime-700, .text-emerald-300 { color: var(--tw-primary-dark) !important; }
+.bg-lime-300 { background-color: var(--tw-primary) !important; }
+.bg-emerald-50 { background-color: var(--tw-soft) !important; }
+.border-emerald-100 { border-color: var(--tw-line) !important; }
+.dashboard-shell aside { border-right: 1px solid #2d4b38; }
+main[style*="IBM Plex Sans"] { background: #fff !important; }
+main[style*="IBM Plex Sans"] h1 { letter-spacing: -.035em; }
+main[style*="IBM Plex Sans"] button[style*="background"] { background: var(--tw-primary) !important; color: var(--tw-ink) !important; border: 0 !important; box-shadow: 0 8px 18px rgb(126 193 81 / .22); }
+main[style*="IBM Plex Sans"] button[style*="background"]:hover { background: #6DAF43 !important; transform: translateY(-1px); }
+
 @layer components {
   .dashboard-shell>div>main>nav{ display: none !important; }
   .ph-metrics{ @apply mx-auto mb-7 grid max-w-7xl gap-4 px-5 md:grid-cols-3 md:px-8; }

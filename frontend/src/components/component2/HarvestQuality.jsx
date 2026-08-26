@@ -52,11 +52,11 @@ import Footer from '../layout/Footer'
 
 const INK = '#1F3D2E'
 const INK_DARK = '#152A1E'
-const PAPER = '#F6F3E9'
-const RULE = '#DDD5C0'
-const GOLD = '#B9872E'
-const GOLD_DEEP = '#93691F'
-const SAGE = '#5E7E52'
+const PAPER = '#FFFFFF'
+const RULE = '#E5EEE8'
+const GOLD = '#7EC151'
+const GOLD_DEEP = '#568F32'
+const SAGE = '#568F32'
 
 const SIGNALS = ['Plantation health', 'Tea bush maturity', 'Climate conditions', 'Weather forecast', 'Harvest time', 'Estate zone']
 const TIERS = [
@@ -97,7 +97,7 @@ function HarvestQuality() {
 
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         {/* ── Intro ─────────────────────────────────────────────── */}
-        <p className="hq-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
+        {/* <p className="hq-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
           STEP 05 · QUALITY INTELLIGENCE
         </p>
         <div className="mt-3 max-w-2xl">
@@ -108,7 +108,7 @@ function HarvestQuality() {
             Estimate the quality potential of your harvest before it reaches
             the factory floor.
           </p>
-        </div>
+        </div> */}
 
         {/* ── Workspace ─────────────────────────────────────────── */}
         <div className="mt-10 grid gap-5 lg:grid-cols-[.85fr_1.15fr]">

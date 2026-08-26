@@ -52,10 +52,10 @@ import Footer from '../layout/Footer'
 
 const INK = '#1F3D2E'
 const INK_DARK = '#152A1E'
-const PAPER = '#F6F3E9'
-const RULE = '#DDD5C0'
-const GOLD = '#B9872E'
-const GOLD_DEEP = '#93691F'
+const PAPER = '#FFFFFF'
+const RULE = '#E5EEE8'
+const GOLD = '#7EC151'
+const GOLD_DEEP = '#568F32'
 
 function DensityPlanning() {
   const [analysed, setAnalysed] = useState(false)
@@ -99,7 +99,7 @@ function DensityPlanning() {
 
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         {/* ── Intro ─────────────────────────────────────────────── */}
-        <p className="dp-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
+        {/* <p className="dp-mono text-[11px] tracking-[.25em]" style={{ color: GOLD_DEEP }}>
           STEP 06 · PLANTATION PLANNING
         </p>
         <div className="mt-3 max-w-3xl">
@@ -110,7 +110,7 @@ function DensityPlanning() {
             Land area, row spacing, plant spacing, zone and terrain combine
             into an optimised plantation layout.
           </p>
-        </div>
+        </div> */}
 
         {/* ── Workspace ─────────────────────────────────────────── */}
         <div className="mt-10 grid gap-5 lg:grid-cols-[.9fr_1.1fr]">
