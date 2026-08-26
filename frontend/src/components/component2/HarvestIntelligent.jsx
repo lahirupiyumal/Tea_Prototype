@@ -42,6 +42,7 @@ const PREDICTION_SIGNALS = [
 ]
 
 function HarvestIntelligence() {
+  const [image, setImage] = useState(null)
   const [predicted, setPredicted] = useState(false)
 
   // Gauge geometry — semicircle, radius 90, centred at (100,100)
@@ -102,23 +103,26 @@ function HarvestIntelligence() {
 
         {/* Upload + what the model evaluates */}
         <div className="mt-10 grid gap-5 lg:grid-cols-[.9fr_1.1fr]">
+          <div className="flex flex-col gap-3">
           <label
             className="flex min-h-52 cursor-pointer flex-col items-center justify-center rounded-sm border border-dashed p-8 text-center transition hover:bg-[#F6F3E9]"
             style={{ borderColor: RULE, background: '#FFFEF9' }}
           >
-            <input className="hidden" type="file" accept="image/*" />
-            <span
+            <input className="hidden" type="file" accept="image/*" onChange={(event) => { setImage(event.target.files?.[0] || null); setPredicted(false) }} />
+            {image ? <img src={URL.createObjectURL(image)} alt="Selected tea bush" className="h-32 w-full rounded-sm object-cover" /> : <span
               className="flex h-11 w-11 items-center justify-center rounded-full text-lg"
               style={{ background: INK, color: PAPER }}
               aria-hidden="true"
             >
               ⤒
-            </span>
+            </span>}
             <strong className="hi-display mt-4 text-lg font-medium" style={{ color: INK_DARK }}>
-              Upload a tea bush image
+              {image ? image.name : 'Upload a tea bush image'}
             </strong>
-            <span className="mt-2 text-xs text-[#7A8874]">PNG, JPG or WEBP · Max 10MB</span>
+            <span className="mt-2 text-xs text-[#7A8874]">{image ? 'Image ready for analysis' : 'PNG, JPG or WEBP · Max 10MB'}</span>
           </label>
+          <button type="button" disabled={!image} onClick={() => setPredicted(true)} className="rounded-sm px-5 py-3.5 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-40" style={{ background: GOLD, color: INK_DARK }}>{predicted ? 'Analysis complete ✓' : 'Analyze a picture →'}</button>
+          </div>
 
           <div className="rounded-sm border p-7" style={{ borderColor: RULE, background: '#FFFEF9' }}>
             <p className="hi-mono text-[10px] uppercase tracking-[.2em] text-[#9AA593]">AI analysis</p>
