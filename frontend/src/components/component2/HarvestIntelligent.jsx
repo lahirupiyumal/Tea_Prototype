@@ -188,7 +188,7 @@ function HarvestIntelligence() {
                   />
                   <circle cx="100" cy="100" r="6" fill={PAPER} />
                 </svg>
-                <div className="absolute inset-x-0 bottom-0 flex items-baseline justify-center gap-1">
+                <div className="mt-1 flex items-baseline justify-center gap-1">
                   <strong className="hi-display text-4xl font-semibold" style={{ color: GOLD }}>
                     {predicted ? READINESS_SCORE : '—'}
                   </strong>
