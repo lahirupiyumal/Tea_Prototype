@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './components/home'
+import Component1 from './components/component1'
 import Component2 from './components/component2'
 import HarvestIntelligent from './components/component2/HarvestIntelligent'
 import HarvestReadinessDetection from './components/component2/HarvestReadinessDetection'
@@ -12,6 +13,8 @@ import Component4 from './components/component4'
 function App() {
   return <BrowserRouter><Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/component1/*" element={<Component1 />} />
+    <Route path="/disease-intelligence/*" element={<Component1 />} />
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/component2" element={<Component2 />} />
     <Route path="/plantation-health" element={<Component2 />} />
