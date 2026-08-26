@@ -22,6 +22,7 @@ const SAGE = '#5E7E52'
 
 function PlantationHealth() {
   const [analysed, setAnalysed] = useState(false)
+  const [location, setLocation] = useState('Nuwara Eliya, Sri Lanka')
 
   return (
     <main
@@ -115,6 +116,7 @@ function PlantationHealth() {
             </label>
 
             <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5">
+              <LocationField value={location} setValue={setLocation} />
               <Field label="Temperature" value="21" unit="°C" />
               <Field label="Rainfall" value="150" unit="mm" />
               <Field label="Humidity" value="82" unit="%" />
@@ -154,7 +156,7 @@ function PlantationHealth() {
           <div className="ph-spine hidden md:block" aria-hidden="true" />
 
           {/* OUTPUTS */}
-          <div className="p-6 md:p-9" style={{ background: '#FBF9F2' }}>
+          <div className="ph-output-panel p-6 md:p-9" style={{ background: '#1F3D2E' }}>
             <PanelTitle step="02" title="AI health assessment" label="Outputs" />
 
             <div className="mt-6 flex items-center gap-6">
@@ -248,6 +250,25 @@ function Field({ label, value, unit }) {
         />
         <b className="text-xs font-medium text-[#8A9584]">{unit}</b>
       </div>
+    </label>
+  )
+}
+
+function LocationField({ value, setValue }) {
+  return (
+    <label className="col-span-2 flex flex-col gap-1.5">
+      <span className="ph-mono text-[10px] uppercase tracking-[.15em] text-[#7A8874]">Plantation location</span>
+      <div className="ph-field-underline flex items-center gap-2 py-1.5">
+        <span className="text-base text-[#568F32]" aria-hidden="true">⌖</span>
+        <input
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+          placeholder="Enter estate, town or district"
+          className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-[#A4B1A7]"
+          aria-label="Plantation location"
+        />
+      </div>
+      <small className="text-[11px] text-[#8A9584]">Used to interpret local climate and field conditions.</small>
     </label>
   )
 }
