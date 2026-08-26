@@ -179,9 +179,12 @@ function Home() {
 
         {/* HERO */}
         <section
-          className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-16 px-5 py-24 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12"
+          className="relative grid min-h-[calc(100vh-80px)] w-full items-center gap-16 overflow-hidden px-5 py-24 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12"
           id="home"
         >
+          <img src="/tea-leaves-hero.png" alt="Fresh tea leaves" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/15" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e2b20]/25 via-transparent to-transparent" aria-hidden="true" />
           <div
             className="pointer-events-none absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full opacity-20 blur-3xl"
             style={{ background: 'radial-gradient(circle, #86EFAC 0%, transparent 70%)' }}
@@ -194,7 +197,7 @@ function Home() {
           />
           <div className="pointer-events-none absolute right-8 top-10 select-none" aria-hidden="true" />
 
-          <div className="relative">
+          <div className="relative z-10">
             <p className="flex items-center gap-2 font-['JetBrains_Mono',monospace] text-[11px] font-medium tracking-[.24em] text-[#1d7a59]">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#1d7a59]" />
               CEYLON TEA INTELLIGENCE PLATFORM
