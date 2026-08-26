@@ -44,11 +44,12 @@ const PREDICTION_SIGNALS = [
 function HarvestIntelligence() {
   const [image, setImage] = useState(null)
   const [predicted, setPredicted] = useState(false)
+  const displayedScore = predicted ? READINESS_SCORE : 0
 
   // Gauge geometry — semicircle, radius 90, centred at (100,100)
   const circumference = Math.PI * 90
-  const filled = (circumference * READINESS_SCORE) / 100
-  const needleAngle = -90 + (READINESS_SCORE / 100) * 180
+  const filled = (circumference * displayedScore) / 100
+  const needleAngle = -90 + (displayedScore / 100) * 180
 
   return (
     <main
@@ -189,7 +190,7 @@ function HarvestIntelligence() {
                 </svg>
                 <div className="absolute inset-x-0 bottom-0 flex items-baseline justify-center gap-1">
                   <strong className="hi-display text-4xl font-semibold" style={{ color: GOLD }}>
-                    {READINESS_SCORE}
+                    {predicted ? READINESS_SCORE : '—'}
                   </strong>
                   <span className="hi-mono text-xs text-white/50">/100</span>
                 </div>
@@ -202,9 +203,9 @@ function HarvestIntelligence() {
                   Recommended window
                 </p>
                 <strong className="hi-display mt-2 block text-2xl font-medium" style={{ color: PAPER }}>
-                  Next 3–5 days
+                  {predicted ? 'Next 3–5 days' : 'Awaiting analysis'}
                 </strong>
-                <small className="text-sm text-white/60">Conditions are favourable</small>
+                <small className="text-sm text-white/60">{predicted ? 'Conditions are favourable' : 'Upload an image to continue'}</small>
               </div>
             </div>
           </div>
@@ -337,7 +338,7 @@ function HarvestIntelligence() {
             </p>
 
             <div className="mt-9 grid gap-4 sm:grid-cols-3">
-              <Result label="Best harvest date" value={predicted ? '15 July' : '—'} />
+              <Result label="Best harvest date" value={predicted ? '5 August' : '—'} />
               <Result label="Expected yield" value={predicted ? '2,250' : '—'} suffix={predicted ? 'kg/ha' : ''} />
               <Result label="AI confidence" value={predicted ? '91' : '—'} suffix={predicted ? '%' : ''} />
             </div>
