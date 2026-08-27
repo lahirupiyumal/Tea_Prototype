@@ -39,7 +39,6 @@
 
 
 import { useMemo, useState } from 'react'
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 /**
@@ -94,8 +93,6 @@ function DensityPlanning() {
         .dp-corner.bl { bottom: -1px; left: -1px; border-bottom: 1px solid; border-left: 1px solid; }
         .dp-corner.br { bottom: -1px; right: -1px; border-bottom: 1px solid; border-right: 1px solid; }
       `}</style>
-
-      <Header />
 
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         {/* ── Intro ─────────────────────────────────────────────── */}

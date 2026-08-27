@@ -40,7 +40,6 @@
 
 
 import { useState } from 'react'
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 /**
@@ -92,8 +91,6 @@ function HarvestQuality() {
           clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);
         }
       `}</style>
-
-      <Header />
 
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         {/* ── Intro ─────────────────────────────────────────────── */}

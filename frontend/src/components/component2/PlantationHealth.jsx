@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 /**
@@ -72,8 +71,6 @@ function PlantationHealth() {
         }
         .ph-field-underline:focus-within { border-color: ${INK}; }
       `}</style>
-
-      <Header />
 
       {/* ── Page intro ─────────────────────────────────────────────── */}
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-8 md:px-8">

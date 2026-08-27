@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react'
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 import { PROTOTYPE_SAMPLES } from './data/prototypeDataset'
@@ -110,8 +109,6 @@ function Component3() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7f8f2] via-[#f4f2e9] to-white font-sans text-emerald-950 flex flex-col justify-between">
-      <Header />
-
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow space-y-10">
         
         {/* Research Dashboard Hero Header */}

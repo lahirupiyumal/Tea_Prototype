@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 /**
@@ -82,8 +81,6 @@ function HarvestIntelligence() {
           border: 1px solid rgba(246,243,233,0.14);
         }
       `}</style>
-
-      <Header />
 
       {/* ══════════════════════════════════════════════════════════
           STEP 03 — HARVEST READINESS DETECTION

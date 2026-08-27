@@ -11,27 +11,35 @@ import DensityPlanning from './components/component2/DensityPlanning'
 import Dashboard from './components/dashboard'
 import Component4 from './components/component4'
 import Login from './components/auth/Login'
+import Header from './components/layout/Header'
+
+function AppLayout({ children, showHeader = true }) {
+  return <>
+    {showHeader && <Header />}
+    {children}
+  </>
+}
 
 function App() {
   return <BrowserRouter><Routes>
     <Route path="/" element={<Navigate to="/login" replace />} />
-    <Route path="/home" element={<Home />} />
+    <Route path="/home" element={<AppLayout><Home /></AppLayout>} />
     <Route path="/login" element={<Login />} />
-    <Route path="/component1/*" element={<Component1 />} />
-    <Route path="/disease-intelligence/*" element={<Component1 />} />
-    <Route path="/dashboard" element={<Dashboard />} />
-    <Route path="/component2" element={<Component2 />} />
-    <Route path="/plantation-health" element={<Component2 />} />
-    <Route path="/harvest-intelligent" element={<HarvestIntelligent />} />
-    <Route path="/harvest-readiness" element={<HarvestReadinessDetection />} />
-    <Route path="/yield-prediction" element={<YieldPrediction />} />
-    <Route path="/harvest-quality" element={<HarvestQuality />} />
-    <Route path="/density-planning" element={<DensityPlanning />} />
-    <Route path="/tea-quality/*" element={<Component3 />} />
-    <Route path="/quality-intelligence/*" element={<Component3 />} />
-    <Route path="/origin-intelligence/*" element={<Component3 />} />
-    <Route path="/tea-provenance/*" element={<Component3 />} />
-    <Route path="/component4/*" element={<Component4 />} />
+    <Route path="/component1/*" element={<AppLayout><Component1 /></AppLayout>} />
+    <Route path="/disease-intelligence/*" element={<AppLayout><Component1 /></AppLayout>} />
+    <Route path="/dashboard" element={<AppLayout><Dashboard /></AppLayout>} />
+    <Route path="/component2" element={<AppLayout><Component2 /></AppLayout>} />
+    <Route path="/plantation-health" element={<AppLayout><Component2 /></AppLayout>} />
+    <Route path="/harvest-intelligent" element={<AppLayout><HarvestIntelligent /></AppLayout>} />
+    <Route path="/harvest-readiness" element={<AppLayout><HarvestReadinessDetection /></AppLayout>} />
+    <Route path="/yield-prediction" element={<AppLayout><YieldPrediction /></AppLayout>} />
+    <Route path="/harvest-quality" element={<AppLayout><HarvestQuality /></AppLayout>} />
+    <Route path="/density-planning" element={<AppLayout><DensityPlanning /></AppLayout>} />
+    <Route path="/tea-quality/*" element={<AppLayout><Component3 /></AppLayout>} />
+    <Route path="/quality-intelligence/*" element={<AppLayout><Component3 /></AppLayout>} />
+    <Route path="/origin-intelligence/*" element={<AppLayout><Component3 /></AppLayout>} />
+    <Route path="/tea-provenance/*" element={<AppLayout><Component3 /></AppLayout>} />
+    <Route path="/component4/*" element={<AppLayout><Component4 /></AppLayout>} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></BrowserRouter>
 }

@@ -1,5 +1,5 @@
 import { NavLink, Route, Routes } from "react-router-dom";
-import { Bell, ChartNoAxesCombined, CircleDollarSign, Database, FileCheck2, Globe2, Leaf, LayoutDashboard, Search, ShieldCheck, Sparkles } from "lucide-react";
+import { ChartNoAxesCombined, CircleDollarSign, Database, FileCheck2, Globe2, Leaf, LayoutDashboard, ShieldCheck, Sparkles } from "lucide-react";
 
 import Dashboard from "./Dashboard";
 import TeaBatches from "./TeaBatches";
@@ -35,10 +35,6 @@ function Component4() {
           <div className="sidebar-note"><Sparkles size={15} /><span>Powered by smart tea intelligence</span></div>
         </aside>
         <main className="component4-main">
-          <header className="component4-topbar">
-            <div className="topbar-search"><Search size={16} /><input aria-label="Search Tea Smart AI" placeholder="Search your tea intelligence" /><kbd>⌘ K</kbd></div>
-            <div className="topbar-actions"><button className="icon-btn" aria-label="Notifications"><Bell size={17} /></button><span className="topbar-divider" /><div className="topbar-user"><div className="avatar">TS</div><div><strong>Tea Smart AI</strong><span>Export desk · Online</span></div></div></div>
-          </header>
           <div className="component4-content"><div className="component4-page">
             <Routes>
               <Route index element={<Dashboard />} />
@@ -60,7 +56,10 @@ function Component4() {
 }
 
 function BrandMark() {
-  return <div className="component4-brand"><div className="tea-logo" aria-hidden="true"><Leaf size={26} strokeWidth={2.4} /></div><div><h2>Tea Smart <b>AI</b></h2><span>Intelligence rooted in tea</span></div></div>;
+  return <div className="component4-brand">
+    <div className="tea-logo"><img src="/teawise-logo.png" alt="TeaCore logo" /></div>
+    <div className="component4-brand-copy"><h2>Tea<span>Core</span></h2><p>Intelligence rooted in tea</p></div>
+  </div>;
 }
 
 function NavItem({ to, icon, label, end }) {

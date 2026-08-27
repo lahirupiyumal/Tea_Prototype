@@ -37,7 +37,6 @@
 
 
 
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 /**
@@ -86,8 +85,6 @@ function HarvestReadinessDetection() {
         .hr-display { font-family: 'Fraunces', ui-serif, Georgia, serif; }
         .hr-mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
       `}</style>
-
-      <Header />
 
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         {/* ── Intro ─────────────────────────────────────────────── */}

@@ -45,7 +45,6 @@
 
 
 import { useState } from 'react'
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 /**
@@ -110,8 +109,6 @@ function YieldPrediction() {
           border: 1px solid rgba(246,243,233,0.14);
         }
       `}</style>
-
-      <Header />
 
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         {/* ── Intro ─────────────────────────────────────────────── */}

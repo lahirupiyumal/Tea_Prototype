@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 
 /**
@@ -163,8 +162,6 @@ function Home() {
             .marquee-track, .float-slow { animation: none !important; }
           }
         `}</style>
-
-        <Header />
 
         {/* HERO */}
         <section
