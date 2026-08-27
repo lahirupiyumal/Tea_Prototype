@@ -58,7 +58,7 @@ const GOLD = '#7EC151'
 const GOLD_DEEP = '#568F32'
 const SAGE = '#568F32'
 
-const SIGNALS = ['Plantation health', 'Tea bush maturity', 'Climate conditions', 'Weather forecast', 'Harvest time', 'Estate zone']
+const SIGNALS = ['Plantation health', 'Climate conditions', 'Weather forecast', 'Harvest time', 'Estate zone']
 const TIERS = [
   { level: 'Premium', leaves: 3, note: 'Top-grade cupping profile' },
   { level: 'Medium', leaves: 2, note: 'Sound, market-standard leaf' },

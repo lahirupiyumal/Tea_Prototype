@@ -269,7 +269,6 @@ function Home() {
           <div className="pointer-events-none absolute -right-24 top-12 h-72 w-72 rounded-full border border-[#dcefc9]" aria-hidden="true" />
           <div className="pointer-events-none absolute -right-12 top-24 h-48 w-48 rounded-full border border-[#dcefc9]" aria-hidden="true" />
           <div className="mx-auto max-w-6xl">
-            <div className="mb-5 flex items-center gap-3 font-['JetBrains_Mono',monospace] text-[11px] font-semibold tracking-[.22em] text-[#1d7a59]"><span className="h-px w-10 bg-[#7ec151]" /> THE TEACORE ECOSYSTEM</div>
             <h2 className="my-6 max-w-3xl font-['Space_Grotesk',sans-serif] text-4xl font-semibold leading-[1.05] tracking-tight text-[#153c31] md:text-6xl">
               From soil to shelf, <span className="text-[#1d7a59]">intelligence at every step.</span>
             </h2>
