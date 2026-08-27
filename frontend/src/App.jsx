@@ -13,7 +13,8 @@ import Login from './components/auth/Login'
 
 function App() {
   return <BrowserRouter><Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="/" element={<Navigate to="/login" replace />} />
+    <Route path="/home" element={<Home />} />
     <Route path="/login" element={<Login />} />
     <Route path="/component1/*" element={<Component1 />} />
     <Route path="/disease-intelligence/*" element={<Component1 />} />

@@ -1,7 +1,7 @@
 function Header() {
   return (
     <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
-      <a className="text-lg font-bold tracking-[.18em] text-emerald-950" href="/">
+      <a className="text-lg font-bold tracking-[.18em] text-emerald-950" href="/home">
         <img className="mr-2 inline-block h-10 w-10 object-contain align-middle" src="/teawise-logo.png" alt="TeaCore logo" />
         Tea<span className="text-lime-700">Core</span>
       </a>
