@@ -2,11 +2,8 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './components/home'
 import Component1 from './components/component1'
 import Component2 from './components/component2'
-<<<<<<< HEAD
 import Component3 from './components/component3'
-=======
 import HarvestIntelligent from './components/component2/HarvestIntelligent'
->>>>>>> 2e3a26f0b48cec89d62b26afadebc0ebab35a400
 import HarvestReadinessDetection from './components/component2/HarvestReadinessDetection'
 import YieldPrediction from './components/component2/YieldPrediction'
 import HarvestQuality from './components/component2/HarvestQuality'
@@ -16,21 +13,6 @@ import Component4 from './components/component4'
 import Login from './components/auth/Login'
 
 function App() {
-<<<<<<< HEAD
-  if (window.location.pathname === '/component3' || window.location.pathname === '/tea-intelligence' || window.location.pathname === '/quality-intelligence') {
-    return <Component3 />
-  }
-
-  if (window.location.pathname === '/component2' || window.location.pathname === '/plantation-health') {
-    return <Component2 />
-  }
-
-  if (window.location.pathname === '/harvest-readiness') {
-    return <HarvestReadinessDetection />
-  }
-
-  return <Home />
-=======
   return <BrowserRouter><Routes>
     <Route path="/" element={<Navigate to="/login" replace />} />
     <Route path="/home" element={<Home />} />
@@ -45,10 +27,13 @@ function App() {
     <Route path="/yield-prediction" element={<YieldPrediction />} />
     <Route path="/harvest-quality" element={<HarvestQuality />} />
     <Route path="/density-planning" element={<DensityPlanning />} />
+    <Route path="/tea-quality/*" element={<Component3 />} />
+    <Route path="/quality-intelligence/*" element={<Component3 />} />
+    <Route path="/origin-intelligence/*" element={<Component3 />} />
+    <Route path="/tea-provenance/*" element={<Component3 />} />
     <Route path="/component4/*" element={<Component4 />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></BrowserRouter>
->>>>>>> 2e3a26f0b48cec89d62b26afadebc0ebab35a400
 }
 
 export default App;
