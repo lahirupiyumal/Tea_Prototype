@@ -32,6 +32,9 @@ const ecosystemFeatures = [
       'Real-time crop health, soil, and weather signals so every plot gets the decision it actually needs.',
     link: 'Explore field insights',
     size: 'lg',
+    eyebrow: '01 / FIELD INTELLIGENCE',
+    stat: '24/7',
+    statLabel: 'signal coverage',
   },
   {
     marker: 'Network',
@@ -39,6 +42,9 @@ const ecosystemFeatures = [
     description: 'Growers, factories, and buyers on one transparent ledger of quality.',
     link: 'Discover the network',
     size: 'sm',
+    eyebrow: '02 / SHARED NETWORK',
+    stat: '1',
+    statLabel: 'source of truth',
   },
   {
     marker: 'Market',
@@ -46,6 +52,9 @@ const ecosystemFeatures = [
     description: 'Traceable data that lets Ceylon tea earn the price it deserves.',
     link: 'See the difference',
     size: 'sm',
+    eyebrow: '03 / TRACEABLE MARKET',
+    stat: '100%',
+    statLabel: 'lot visibility',
   },
 ]
 
@@ -102,35 +111,15 @@ function LoadingScreen({ progress }) {
       }`}
       role="status"
       aria-live="polite"
-      aria-label="Loading Ceylon Tea Intelligence Platform"
+      aria-label="Loading TeaCore"
     >
-      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" className="mb-7">
-        <circle cx="36" cy="36" r="30" stroke="#d9eadb" strokeWidth="1.5" />
-        <circle
-          cx="36"
-          cy="36"
-          r="30"
-          stroke="#1d7a59"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeDasharray={2 * Math.PI * 30}
-          strokeDashoffset={2 * Math.PI * 30 * (1 - progress / 100)}
-          transform="rotate(-90 36 36)"
-          className="transition-[stroke-dashoffset] duration-150 ease-linear motion-reduce:transition-none"
+      <img src="/teawise-logo.png" alt="TeaCore logo" className="h-24 w-24 object-contain" />
+      <div className="mt-8 h-1.5 w-48 overflow-hidden rounded-full bg-[#d9eadb]" aria-hidden="true">
+        <div
+          className="h-full rounded-full bg-[#1d7a59] transition-[width] duration-150 ease-linear motion-reduce:transition-none"
+          style={{ width: `${Math.min(progress, 100)}%` }}
         />
-        <path
-          d="M36 50c9-4 14-12 14-21 0-3-.6-6-1.7-8.6C45 24 39 27 36 34c-3-7-9-10-12.3-13.6C22.6 23 22 26 22 29c0 9 5 17 14 21z"
-          fill="#1d7a59"
-          opacity="0.9"
-        />
-      </svg>
-      <p className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[.28em] text-[#1d6f4d]">
-        CALIBRATING FIELD DATA
-      </p>
-      <p className="mt-3 font-['JetBrains_Mono',monospace] text-3xl font-medium text-[#123d31]">
-        {Math.min(progress, 100)}
-        <span className="text-[#1d7a59]">%</span>
-      </p>
+      </div>
     </div>
   )
 }
@@ -161,7 +150,7 @@ function Home() {
       <LoadingScreen progress={progress} />
 
       <main
-        className={`min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_#f3fbf6_0%,_#f9fdfb_28%,_#ffffff_100%)] font-['Inter',sans-serif] text-[#153c31] transition-all duration-700 ${
+        className={`min-h-screen overflow-x-clip bg-[radial-gradient(circle_at_top,_#f3fbf6_0%,_#f9fdfb_28%,_#ffffff_100%)] font-['Inter',sans-serif] text-[#153c31] transition-all duration-700 ${
           ready ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
         }`}
       >
@@ -179,9 +168,12 @@ function Home() {
 
         {/* HERO */}
         <section
-          className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-16 px-5 py-24 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12"
+          className="relative grid min-h-[calc(100vh-80px)] w-full items-center gap-16 overflow-hidden px-5 py-24 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12"
           id="home"
         >
+          <img src="/tea-leaves-hero.png" alt="Fresh tea leaves" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/15" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e2b20]/25 via-transparent to-transparent" aria-hidden="true" />
           <div
             className="pointer-events-none absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full opacity-20 blur-3xl"
             style={{ background: 'radial-gradient(circle, #86EFAC 0%, transparent 70%)' }}
@@ -194,12 +186,7 @@ function Home() {
           />
           <div className="pointer-events-none absolute right-8 top-10 select-none" aria-hidden="true" />
 
-          <div className="relative">
-            <p className="flex items-center gap-2 font-['JetBrains_Mono',monospace] text-[11px] font-medium tracking-[.24em] text-[#1d7a59]">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#1d7a59]" />
-              CEYLON TEA INTELLIGENCE PLATFORM
-            </p>
-
+          <div className="relative z-10">
             <h1 className="mt-7 max-w-xl font-['Space_Grotesk',sans-serif] text-5xl font-semibold leading-[1.05] tracking-tight text-[#153c31] md:text-6xl">
               Every leaf,
               <br />
@@ -278,28 +265,27 @@ function Home() {
         </div>
 
         {/* ECOSYSTEM — bento grid */}
-        <section className="relative overflow-hidden bg-white px-5 py-24 md:px-12" id="ecosystem">
-          <div className="pointer-events-none absolute -right-24 top-20 h-64 w-64 rounded-full border border-lime-100" aria-hidden="true" />
-          <div className="pointer-events-none absolute -right-16 top-28 h-48 w-48 rounded-full border border-lime-100" aria-hidden="true" />
+        <section className="relative overflow-hidden bg-[#f8fbf7] px-5 py-24 md:px-12 md:py-32" id="ecosystem">
+          <div className="pointer-events-none absolute -right-24 top-12 h-72 w-72 rounded-full border border-[#dcefc9]" aria-hidden="true" />
+          <div className="pointer-events-none absolute -right-12 top-24 h-48 w-48 rounded-full border border-[#dcefc9]" aria-hidden="true" />
           <div className="mx-auto max-w-6xl">
-            <h2 className="mx-auto my-6 max-w-2xl font-['Space_Grotesk',sans-serif] text-4xl font-semibold leading-tight text-[#153c31] md:text-5xl">
+            <h2 className="my-6 max-w-3xl font-['Space_Grotesk',sans-serif] text-4xl font-semibold leading-[1.05] tracking-tight text-[#153c31] md:text-6xl">
               From soil to shelf, <span className="text-[#1d7a59]">intelligence at every step.</span>
             </h2>
+            <p className="max-w-xl text-base leading-7 text-[#60766d]">One connected view for the people who grow, make, and move Ceylon tea.</p>
 
             <div className="mt-14 grid gap-5 md:grid-cols-2">
               {ecosystemFeatures.map((feature) => (
                 <article
                   key={feature.title}
-                  className={`group relative overflow-hidden rounded-2xl border border-emerald-100 bg-emerald-50 p-8 transition duration-300 hover:border-[#6EE7B7]/40 hover:bg-white ${
+                  className={`group relative overflow-hidden rounded-[1.5rem] border border-[#dce9df] bg-white p-8 shadow-[0_12px_40px_rgba(21,60,49,.04)] transition duration-300 hover:-translate-y-1 hover:border-[#a9d5a0] hover:shadow-[0_20px_50px_rgba(21,60,49,.09)] md:p-10 ${
                     feature.size === 'lg' ? 'md:col-span-2 md:flex md:items-center md:justify-between md:gap-10' : ''
                   }`}
                 >
                   <div className={feature.size === 'lg' ? 'max-w-md' : ''}>
-                    <span className="font-['JetBrains_Mono',monospace] text-xs tracking-widest text-[#1d7a59]">
-                      {feature.marker.toUpperCase()}
-                    </span>
+                    <div className="mb-8 flex items-center justify-between"><span className="font-['JetBrains_Mono',monospace] text-[10px] font-semibold tracking-[.16em] text-[#1d7a59]">{feature.eyebrow}</span><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf7e9] text-lg text-[#1d7a59]">{feature.size === 'lg' ? '⌁' : feature.marker === 'Network' ? '↗' : '◌'}</span></div>
                     <h3 className="my-4 font-['Space_Grotesk',sans-serif] text-2xl text-[#153c31]">{feature.title}</h3>
-                    <p className="mb-6 text-sm leading-6 text-[#5b6f68]">{feature.description}</p>
+                    <p className="mb-8 max-w-lg text-sm leading-6 text-[#5b6f68]">{feature.description}</p>
                     <a
                       className="text-xs font-semibold tracking-wide text-[#1d7a59] underline decoration-[#a8e3b6]/80 underline-offset-4 group-hover:decoration-[#1d7a59]"
                       href="#ecosystem"
@@ -319,6 +305,7 @@ function Home() {
                       ))}
                     </div>
                   )}
+                  {feature.size !== 'lg' && <div className="mt-8 flex items-end justify-between border-t border-[#e5eee8] pt-5"><span className="font-['Space_Grotesk',sans-serif] text-3xl font-semibold text-[#153c31]">{feature.stat}</span><span className="font-['JetBrains_Mono',monospace] text-[10px] uppercase tracking-widest text-[#789087]">{feature.statLabel}</span></div>}
                 </article>
               ))}
             </div>
