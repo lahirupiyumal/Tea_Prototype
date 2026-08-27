@@ -22,15 +22,15 @@ function Component4() {
           <BrandMark />
           <p className="nav-kicker">EXPORT INTELLIGENCE</p>
           <nav aria-label="Tea Smart AI navigation">
-            <NavItem to="." end icon={<LayoutDashboard size={16} />} label="Overview" />
-            <NavItem to="batches" icon={<Database size={16} />} label="Tea batches" />
-            <NavItem to="price-forecast" icon={<ChartNoAxesCombined size={16} />} label="Price forecast" />
-            <NavItem to="market" icon={<Globe2 size={16} />} label="Market intelligence" />
-            <NavItem to="export" icon={<CircleDollarSign size={16} />} label="Export planning" />
-            <NavItem to="ai-recommendation" icon={<Sparkles size={16} />} label="AI recommendations" />
-            <NavItem to="ai-advisor" icon={<Leaf size={16} />} label="AI advisor" />
-            <NavItem to="blockchain" icon={<ShieldCheck size={16} />} label="Blockchain" />
-            <NavItem to="passport" icon={<FileCheck2 size={16} />} label="Tea passport" />
+            <NavItem to="/component4" end icon={<LayoutDashboard size={16} />} label="Overview" />
+            <NavItem to="/component4/batches" icon={<Database size={16} />} label="Tea batches" />
+            <NavItem to="/component4/price-forecast" icon={<ChartNoAxesCombined size={16} />} label="Price forecast" />
+            <NavItem to="/component4/market" icon={<Globe2 size={16} />} label="Market intelligence" />
+            <NavItem to="/component4/export" icon={<CircleDollarSign size={16} />} label="Export planning" />
+            <NavItem to="/component4/ai-recommendation" icon={<Sparkles size={16} />} label="AI recommendations" />
+            <NavItem to="/component4/ai-advisor" icon={<Leaf size={16} />} label="AI advisor" />
+            <NavItem to="/component4/blockchain" icon={<ShieldCheck size={16} />} label="Blockchain" />
+            <NavItem to="/component4/passport" icon={<FileCheck2 size={16} />} label="Tea passport" />
           </nav>
           <div className="sidebar-note"><Sparkles size={15} /><span>Powered by smart tea intelligence</span></div>
         </aside>
