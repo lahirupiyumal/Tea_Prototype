@@ -123,8 +123,6 @@ function DensityPlanning() {
 
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
               <Input label="Total land area" value={area} setValue={setArea} unit="acre" />
-              <Input label="Row spacing" value={rowSpacing} setValue={setRowSpacing} unit="m" />
-              <Input label="Plant spacing" value={plantSpacing} setValue={setPlantSpacing} unit="m" />
               <Select label="Plantation zone" options={['High grown', 'Mid grown', 'Low grown']} />
               <Select label="Terrain type" options={['Level', 'Sloped', 'Hilly']} />
             </div>

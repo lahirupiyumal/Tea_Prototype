@@ -7,7 +7,7 @@ function Header() {
         Tea<span className="text-lime-700">Core</span>
       </a>
       <div className="hidden items-center gap-1 rounded-full border border-[#e7eee8] bg-[#fbfdf9] p-1 lg:flex">
-        <a className="rounded-full px-4 py-2 text-[13px] font-semibold text-[#315444] transition hover:bg-[#edf7e9]" href="/">Platform</a>
+        <a className="rounded-full px-4 py-2 text-[13px] font-semibold text-[#315444] transition hover:bg-[#edf7e9]" href="/home">Home</a>
         <a className="rounded-full px-4 py-2 text-[13px] font-semibold text-[#315444] transition hover:bg-[#edf7e9]" href="/component2">Plantation Health</a>
         {/* <a href="/harvest-readiness">Harvest Readiness</a> */}
         {/* <a href="/yield-prediction">Yield Prediction</a> */}

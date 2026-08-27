@@ -150,7 +150,7 @@ function Home() {
       <LoadingScreen progress={progress} />
 
       <main
-        className={`min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_#f3fbf6_0%,_#f9fdfb_28%,_#ffffff_100%)] font-['Inter',sans-serif] text-[#153c31] transition-all duration-700 ${
+        className={`min-h-screen overflow-x-clip bg-[radial-gradient(circle_at_top,_#f3fbf6_0%,_#f9fdfb_28%,_#ffffff_100%)] font-['Inter',sans-serif] text-[#153c31] transition-all duration-700 ${
           ready ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
         }`}
       >
