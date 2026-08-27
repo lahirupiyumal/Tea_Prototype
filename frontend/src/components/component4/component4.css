@@ -24,7 +24,7 @@
   background: #073b2a;
   border-right: 4px solid #c9e86a;
   position: fixed;
-  top: 76px;
+  top: 0;
   bottom: 0;
   left: 0;
   padding: 24px 14px;
@@ -128,6 +128,10 @@
   width: calc(100% - 250px);
   margin-left: 250px;
 }
+.dashboard-topbar { height: 70px; background: #fffef5; border-bottom: 1px solid #dce5d2; display: flex; align-items: center; justify-content: space-between; padding: 0 34px; }
+.dashboard-search { width: 338px; height: 42px; display: flex; align-items: center; gap: 10px; padding: 0 12px; color: #91a397; background: #fff; border: 1px solid #dce8d8; border-radius: 8px; font: 14px Georgia, serif; box-sizing: border-box; }
+.dashboard-search kbd { margin-left: auto; padding: 4px 6px; color: #89968c; border: 1px solid #e1e8da; border-radius: 5px; font: 10px system-ui; }
+.dashboard-user { display: flex; align-items: center; gap: 14px; color: #18734e; }.dashboard-user > i { height: 28px; border-left: 1px solid #e1e8da; }.user-avatar { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #ed8154; color: white; font: 11px system-ui; }.dashboard-user strong, .dashboard-user small { display: block; color: #173d2e; font-family: Georgia, serif; }.dashboard-user strong { font-size: 13px; }.dashboard-user small { margin-top: 3px; color: #849087; font-size: 10px; }
 
 .component4-page {
   padding: 12px 0 30px;
@@ -572,6 +576,7 @@
   background: #073b2a;
   color: #fffdf1;
 }
+.component4-shell > footer { margin-left: 250px; padding-top: 30px; padding-bottom: 24px; }
 
 .component4-shell > footer a,
 .component4-shell > footer strong {
@@ -584,6 +589,7 @@
 }
 
 @media (max-width: 760px) {
+  .dashboard-topbar { height: auto; min-height: 70px; padding: 12px 14px; gap: 12px; flex-wrap: wrap; }.dashboard-search { width: 100%; }.dashboard-user { margin-left: auto; }
   .component4-layout {
     display: block;
   }

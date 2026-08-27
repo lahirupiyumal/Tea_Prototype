@@ -39,7 +39,7 @@ function App() {
     <Route path="/quality-intelligence/*" element={<AppLayout><Component3 /></AppLayout>} />
     <Route path="/origin-intelligence/*" element={<AppLayout><Component3 /></AppLayout>} />
     <Route path="/tea-provenance/*" element={<AppLayout><Component3 /></AppLayout>} />
-    <Route path="/component4/*" element={<AppLayout><Component4 /></AppLayout>} />
+    <Route path="/component4/*" element={<AppLayout showHeader={false}><Component4 /></AppLayout>} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></BrowserRouter>
 }

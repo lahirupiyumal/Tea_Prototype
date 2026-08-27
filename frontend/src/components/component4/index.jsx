@@ -1,5 +1,5 @@
 import { NavLink, Route, Routes } from "react-router-dom";
-import { ChartNoAxesCombined, CircleDollarSign, Database, FileCheck2, Globe2, Leaf, LayoutDashboard, ShieldCheck, Sparkles } from "lucide-react";
+import { Bell, ChartNoAxesCombined, CircleDollarSign, Database, FileCheck2, Globe2, Leaf, LayoutDashboard, Search, ShieldCheck, Sparkles } from "lucide-react";
 
 import Dashboard from "./Dashboard";
 import TeaBatches from "./TeaBatches";
@@ -35,6 +35,7 @@ function Component4() {
           <div className="sidebar-note"><Sparkles size={15} /><span>Powered by smart tea intelligence</span></div>
         </aside>
         <main className="component4-main">
+          <header className="dashboard-topbar"><div className="dashboard-search"><Search size={17} /><span>Search your tea intelligence</span><kbd>⌘ K</kbd></div><div className="dashboard-user"><Bell size={18} /><i></i><span className="user-avatar">TC</span><div><strong>TeaCore</strong><small>Export desk · Online</small></div></div></header>
           <div className="component4-content"><div className="component4-page">
             <Routes>
               <Route index element={<Dashboard />} />
