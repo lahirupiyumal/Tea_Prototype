@@ -1,10 +1,33 @@
-import {
-  QrCode,
-  ShieldCheck,
-  CheckCircle2,
-} from "lucide-react";
+import { useEffect, useState } from "react";
+import QRCode from "qrcode";
+import { ShieldCheck, CheckCircle2, RefreshCw } from "lucide-react";
+
+const BATCH_ID = "TB-2026-00125";
 
 export default function DigitalTeaPassport() {
+  const [qrDataUrl, setQrDataUrl] = useState("");
+  const [isGenerating, setIsGenerating] = useState(true);
+  const [qrVersion, setQrVersion] = useState(1);
+
+  useEffect(() => {
+    let active = true;
+    setIsGenerating(true);
+    const verificationUrl = `${window.location.origin}/component4/passport?batch=${BATCH_ID}&verified=true`;
+    QRCode.toDataURL(verificationUrl, {
+      errorCorrectionLevel: "H",
+      margin: 2,
+      width: 260,
+      color: { dark: "#123f2d", light: "#ffffff" },
+    }).then((dataUrl) => {
+      if (active) {
+        setQrDataUrl(dataUrl);
+        setIsGenerating(false);
+      }
+    });
+    return () => { active = false; };
+  }, [qrVersion]);
+
+  const generateQr = () => setQrVersion((version) => version + 1);
 
   return (
     <div>
@@ -26,8 +49,9 @@ export default function DigitalTeaPassport() {
 
         </div>
 
-        <button className="primary-btn">
-          Generate QR
+        <button className="primary-btn" onClick={generateQr} type="button">
+          <RefreshCw size={14} className={isGenerating ? "spin" : ""} />
+          {isGenerating ? "Generating..." : "Generate QR"}
         </button>
 
       </div>
@@ -61,9 +85,11 @@ export default function DigitalTeaPassport() {
 
 
           <div className="qr-container">
-
-            <div className="qr-code">
-              <QrCode size={140} />
+            <div className="qr-frame">
+              <div className="qr-code">
+                {qrDataUrl ? <img src={qrDataUrl} alt={`Scannable verification QR for ${BATCH_ID}`} /> : <span>Preparing QR...</span>}
+              </div>
+              <div className="qr-caption"><strong>SCAN TO VERIFY</strong><span>Batch identity · Origin · Quality</span></div>
             </div>
 
           </div>
