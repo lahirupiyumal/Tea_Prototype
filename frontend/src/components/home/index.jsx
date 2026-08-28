@@ -24,6 +24,56 @@ const tickerTags = [
   'Estate-to-export chain of custody',
 ]
 
+const solutionPaths = [
+  {
+    title: 'Tea leaf diseases',
+    short: 'Detect disease before it spreads.',
+    detail: 'Upload a leaf image and get an explainable diagnosis, confidence score, and practical next steps for the field team.',
+    outcome: 'Earlier intervention',
+    href: '/disease-intelligence',
+    action: 'Open disease intelligence',
+  },
+  {
+    title: 'Poor quality evaluation',
+    short: 'Turn quality checks into a repeatable score.',
+    detail: 'Combine grade, defect, purity, and origin signals into one evidence-backed quality view for every tea batch.',
+    outcome: 'Consistent grading',
+    href: '/quality-intelligence',
+    action: 'Explore quality intelligence',
+  },
+  {
+    title: 'Weather and climate variations',
+    short: 'See how climate changes the crop.',
+    detail: 'Track field conditions, weather signals, and crop stress together so growers can act before yield and quality drop.',
+    outcome: 'Climate-aware action',
+    href: '/plantation-health',
+    action: 'View plantation health',
+  },
+  {
+    title: 'Inaccurate yield forecasting',
+    short: 'Plan harvest with better evidence.',
+    detail: 'Use plantation data and harvest intelligence to estimate readiness, expected yield, and the best timing for action.',
+    outcome: 'Smarter harvest planning',
+    href: '/yield-prediction',
+    action: 'Open yield prediction',
+  },
+  {
+    title: 'Export market uncertainty',
+    short: 'Connect origin, quality, and market decisions.',
+    detail: 'Give buyers and exporters a traceable view from estate to lot, with market context that supports stronger decisions.',
+    outcome: 'Confident trade',
+    href: '/component4',
+    action: 'View export intelligence',
+  },
+]
+
+const platformPillars = [
+  ['01', 'Disease intelligence', 'Find field problems early'],
+  ['02', 'Plantation & harvest', 'Grow with better signals'],
+  ['03', 'Quality & origin', 'Prove every lot'],
+  ['04', 'Export & market', 'Trade with confidence'],
+]
+
 const ecosystemFeatures = [
   {
     marker: 'Field',
@@ -127,6 +177,7 @@ function LoadingScreen({ progress }) {
 function Home() {
   const [progress, setProgress] = useState(0)
   const [ready, setReady] = useState(false)
+  const [activeSolution, setActiveSolution] = useState(0)
 
   useEffect(() => {
     const start = Date.now()
@@ -150,7 +201,7 @@ function Home() {
       <LoadingScreen progress={progress} />
 
       <main
-        className={`min-h-screen overflow-x-clip bg-[radial-gradient(circle_at_top,_#f3fbf6_0%,_#f9fdfb_28%,_#ffffff_100%)] font-['Inter',sans-serif] text-[#153c31] transition-all duration-700 ${
+        className={`home-page min-h-screen overflow-x-clip bg-[radial-gradient(circle_at_top,_#f3fbf6_0%,_#f9fdfb_28%,_#ffffff_100%)] font-['Inter',sans-serif] text-[#153c31] transition-all duration-700 ${
           ready ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
         }`}
       >
@@ -159,8 +210,10 @@ function Home() {
           .marquee-track { animation: marquee 26s linear infinite; }
           @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
           .float-slow { animation: float-slow 7s ease-in-out infinite; }
+          @keyframes tea-zoom { from { transform: scale(1); } to { transform: scale(1.06); } }
+          .tea-hero-image { animation: tea-zoom 18s ease-out both; }
           @media (prefers-reduced-motion: reduce) {
-            .marquee-track, .float-slow { animation: none !important; }
+            .marquee-track, .float-slow, .tea-hero-image { animation: none !important; }
           }
         `}</style>
 
@@ -171,9 +224,9 @@ function Home() {
           className="relative grid min-h-[calc(100vh-80px)] w-full items-center gap-16 overflow-hidden px-5 py-24 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12"
           id="home"
         >
-          <img src="/tea-leaves-hero.png" alt="Fresh tea leaves" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/15" aria-hidden="true" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e2b20]/25 via-transparent to-transparent" aria-hidden="true" />
+          <img src="/tea-leaves-hero.png" alt="Fresh tea leaves in a tea plantation" className="tea-hero-image absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,38,26,.9)_0%,rgba(12,57,36,.72)_38%,rgba(12,57,36,.08)_82%)]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(6,31,22,.66)_0%,transparent_42%,rgba(6,31,22,.18)_100%)]" aria-hidden="true" />
           <div
             className="pointer-events-none absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full opacity-20 blur-3xl"
             style={{ background: 'radial-gradient(circle, #86EFAC 0%, transparent 70%)' }}
@@ -186,24 +239,34 @@ function Home() {
           />
           <div className="pointer-events-none absolute right-8 top-10 select-none" aria-hidden="true" />
 
-          <div className="relative z-10">
-            <h1 className="mt-7 max-w-xl font-['Space_Grotesk',sans-serif] text-5xl font-semibold leading-[1.05] tracking-tight text-[#153c31] md:text-6xl">
+          <div className="relative z-10 max-w-2xl">
+            <div className="mb-6 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[.24em] text-[#cde8b2]">
+              <span className="h-px w-10 bg-[#a6d86c]" />
+              Ceylon tea intelligence
+            </div>
+            <h1 className="mt-7 max-w-xl font-['Space_Grotesk',sans-serif] text-5xl font-semibold leading-[1.05] tracking-tight text-white md:text-7xl">
               Every leaf,
               <br />
-              <span className="text-[#1d7a59]">accounted for.</span>
+              <span className="text-[#b9e66f]">accounted for.</span>
             </h1>
 
-            <p className="mt-7 max-w-md text-base leading-7 text-[#4f655e]">
+            <p className="mt-7 max-w-lg text-base leading-7 text-white/80 md:text-lg">
               From highland estate to export crate, one platform gives growers, factories, and buyers a shared,
               real-time read on quality — powered by field data and AI.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-7">
               <a
-                className="text-sm font-semibold text-[#153c31] underline decoration-[#9ad9b6]/70 underline-offset-4 hover:decoration-[#1d7a59]"
+                className="rounded-full bg-[#b9e66f] px-6 py-3.5 text-sm font-bold text-[#173d2e] shadow-[0_10px_30px_rgba(0,0,0,.18)] transition hover:-translate-y-0.5 hover:bg-white"
                 href="#ecosystem"
               >
-                See how it works
+                Explore the platform
+              </a>
+              <a
+                className="text-sm font-semibold text-white underline decoration-white/50 underline-offset-4 transition hover:decoration-white"
+                href="#grades"
+              >
+                See tea by elevation
               </a>
             </div>
           </div>
@@ -264,8 +327,78 @@ function Home() {
           </div>
         </div>
 
+        {/* CHALLENGES TO SOLUTIONS */}
+        <section className="solution-section relative overflow-hidden px-5 py-20 md:px-12 md:py-28" id="solutions">
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-1/3 bg-[radial-gradient(circle_at_top_right,_#d8edbd_0%,_transparent_68%)]" aria-hidden="true" />
+          <div className="relative mx-auto max-w-6xl">
+            <div className="max-w-3xl">
+              <p className="solution-kicker">THE INDUSTRY, CONNECTED</p>
+              <h2 className="mt-4 font-['Space_Grotesk',sans-serif] text-4xl font-semibold leading-tight text-[#153c31] md:text-6xl">
+                From the field to the <span className="text-[#5f9f3d]">final shipment.</span>
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-[#60766d]">
+                TeaCore brings the Sri Lankan tea value chain into one intelligent workspace, replacing disconnected guesses with timely evidence.
+              </p>
+            </div>
+
+            <div className="solution-layout mt-12 grid gap-5 lg:grid-cols-[.8fr_1.2fr]">
+              <div className="solution-challenge-list" role="tablist" aria-label="Tea industry challenges">
+                {solutionPaths.map((path, index) => (
+                  <button
+                    key={path.title}
+                    className={`solution-challenge ${activeSolution === index ? 'is-active' : ''}`}
+                    onClick={() => setActiveSolution(index)}
+                    role="tab"
+                    aria-selected={activeSolution === index}
+                    type="button"
+                  >
+                    <span className="solution-number">0{index + 1}</span>
+                    <span className="text-left">
+                      <strong>{path.title}</strong>
+                      <small>{path.short}</small>
+                    </span>
+                    <span className="solution-arrow" aria-hidden="true">↗</span>
+                  </button>
+                ))}
+              </div>
+
+              <article className="solution-detail" role="tabpanel" aria-label={`${solutionPaths[activeSolution].title} solution`}>
+                <div className="solution-detail-top">
+                  <span className="solution-badge">TEACORE RESPONSE</span>
+                  <span className="solution-status"><span /> READY TO EXPLORE</span>
+                </div>
+                <p className="mt-12 text-sm font-semibold uppercase tracking-[.16em] text-[#7a9e4d]">Challenge 0{activeSolution + 1}</p>
+                <h3 className="mt-3 max-w-xl font-['Space_Grotesk',sans-serif] text-3xl font-semibold leading-tight text-[#153c31] md:text-5xl">
+                  {solutionPaths[activeSolution].title}
+                </h3>
+                <p className="mt-5 max-w-xl text-base leading-7 text-[#526b62]">{solutionPaths[activeSolution].detail}</p>
+                <div className="mt-8 flex flex-wrap items-center gap-5">
+                  <a className="solution-action" href={solutionPaths[activeSolution].href}>{solutionPaths[activeSolution].action} <span aria-hidden="true">↗</span></a>
+                  <span className="solution-outcome"><span>+</span> {solutionPaths[activeSolution].outcome}</span>
+                </div>
+                <div className="solution-progress" aria-hidden="true"><span style={{ width: `${((activeSolution + 1) / solutionPaths.length) * 100}%` }} /></div>
+              </article>
+            </div>
+            <div className="platform-map mt-5">
+              <div className="platform-map-heading">
+                <span>ONE CONNECTED PLATFORM</span>
+                <small>React · FastAPI · AI/ML · Computer Vision · Blockchain</small>
+              </div>
+              <div className="platform-pillars">
+                {platformPillars.map(([number, title, description]) => (
+                  <div key={number} className="platform-pillar">
+                    <span>{number}</span>
+                    <strong>{title}</strong>
+                    <small>{description}</small>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ECOSYSTEM — bento grid */}
-        <section className="relative overflow-hidden bg-[#f8fbf7] px-5 py-24 md:px-12 md:py-32" id="ecosystem">
+        <section className="home-ecosystem relative overflow-hidden bg-[#f8fbf7] px-5 py-24 md:px-12 md:py-32" id="ecosystem">
           <div className="pointer-events-none absolute -right-24 top-12 h-72 w-72 rounded-full border border-[#dcefc9]" aria-hidden="true" />
           <div className="pointer-events-none absolute -right-12 top-24 h-48 w-48 rounded-full border border-[#dcefc9]" aria-hidden="true" />
           <div className="mx-auto max-w-6xl">
@@ -313,7 +446,7 @@ function Home() {
         </section>
 
         {/* ELEVATION GRADES */}
-        <section className="relative overflow-hidden bg-white px-5 py-24 md:px-12" id="grades">
+        <section className="home-grades relative overflow-hidden bg-white px-5 py-24 md:px-12" id="grades">
           <div className="pointer-events-none absolute left-0 top-0 h-1 w-32 rounded-r-full bg-gradient-to-r from-lime-300 to-transparent" aria-hidden="true" />
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -355,7 +488,7 @@ function Home() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="relative overflow-hidden bg-white px-5 py-24 md:px-12" id="voices">
+        <section className="home-voices relative overflow-hidden bg-white px-5 py-24 md:px-12" id="voices">
           <div className="pointer-events-none absolute bottom-8 left-8 text-7xl text-orange-100/80" aria-hidden="true">❋</div>
           <div className="mx-auto max-w-6xl">
             <h2 className="mt-5 max-w-xl font-['Space_Grotesk',sans-serif] text-3xl font-semibold leading-tight text-[#153c31] md:text-4xl">
@@ -387,7 +520,7 @@ function Home() {
         </section>
 
         {/* CLOSING CTA */}
-        <section className="relative overflow-hidden bg-white px-5 py-24 text-emerald-950 md:px-12">
+        <section className="home-cta relative overflow-hidden bg-white px-5 py-24 text-emerald-950 md:px-12">
           <div
             className="pointer-events-none absolute -right-32 -top-32 h-[480px] w-[480px] rounded-full opacity-25 blur-3xl"
             style={{ background: 'radial-gradient(circle, #E2872E 0%, transparent 70%)' }}

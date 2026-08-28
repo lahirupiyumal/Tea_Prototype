@@ -4,7 +4,6 @@ import YieldPrediction from '../component2/YieldPrediction'
 import HarvestReadinessDetection from '../component2/HarvestReadinessDetection'
 import HarvestQuality from '../component2/HarvestQuality'
 import DensityPlanning from '../component2/DensityPlanning'
-import Header from '../layout/Header'
 
 const menuItems = [
   ['health', '🌿', 'Plantation Health', PlantationHealth],
@@ -28,7 +27,6 @@ function Dashboard() {
       <div className="mt-auto rounded-2xl bg-white/10 p-4 text-xs leading-5 text-emerald-100"><span className="text-lime-300">●</span> All AI systems are online<br /><span className="text-emerald-300">Last updated just now</span></div>
     </aside>
     <div className="min-h-screen pl-72">
-      <header className="border-b border-emerald-100 bg-white"><Header /></header>
       <ActivePage />
     </div>
   </div>
