@@ -64,7 +64,8 @@ function BrandMark() {
 }
 
 function NavItem({ to, icon, label, end }) {
-  return <NavLink to={to} end={end}>{icon}<span>{label}</span></NavLink>;
+  const destination = to === "." ? "/component4" : `/component4/${to}`;
+  return <NavLink to={destination} end={end}>{icon}<span>{label}</span></NavLink>;
 }
 
 export default Component4;
