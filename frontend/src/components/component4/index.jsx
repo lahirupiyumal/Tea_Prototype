@@ -21,7 +21,7 @@ function Component4() {
         <aside className="component4-sidebar">
           <BrandMark />
           <p className="nav-kicker">EXPORT INTELLIGENCE</p>
-          <nav aria-label="Tea Smart AI navigation">
+          <nav aria-label="TeaCore navigation">
             <NavItem to="." end icon={<LayoutDashboard size={16} />} label="Overview" />
             <NavItem to="batches" icon={<Database size={16} />} label="Tea batches" />
             <NavItem to="price-forecast" icon={<ChartNoAxesCombined size={16} />} label="Price forecast" />
@@ -36,8 +36,8 @@ function Component4() {
         </aside>
         <main className="component4-main">
           <header className="component4-topbar">
-            <div className="topbar-search"><Search size={16} /><input aria-label="Search Tea Smart AI" placeholder="Search your tea intelligence" /><kbd>⌘ K</kbd></div>
-            <div className="topbar-actions"><button className="icon-btn" aria-label="Notifications"><Bell size={17} /></button><span className="topbar-divider" /><div className="topbar-user"><div className="avatar">TS</div><div><strong>Tea Smart AI</strong><span>Export desk · Online</span></div></div></div>
+            <div className="topbar-search"><Search size={16} /><input aria-label="Search TeaCore" placeholder="Search your tea intelligence" /><kbd>⌘ K</kbd></div>
+            <div className="topbar-actions"><button className="icon-btn" aria-label="Notifications"><Bell size={17} /></button><span className="topbar-divider" /><div className="topbar-user"><div className="avatar">TC</div><div><strong>TeaCore</strong><span>Export desk · Online</span></div></div></div>
           </header>
           <div className="component4-content"><div className="component4-page">
             <Routes>
@@ -60,7 +60,7 @@ function Component4() {
 }
 
 function BrandMark() {
-  return <div className="component4-brand"><div className="tea-logo" aria-hidden="true"><Leaf size={26} strokeWidth={2.4} /></div><div><h2>Tea Smart <b>AI</b></h2><span>Intelligence rooted in tea</span></div></div>;
+  return <div className="component4-brand"><div className="tea-logo"><img src="/teawise-logo.png" alt="TeaCore logo" /></div><div><h2>TeaCore</h2><span>Intelligence rooted in tea</span></div></div>;
 }
 
 function NavItem({ to, icon, label, end }) {

@@ -51,6 +51,12 @@
   box-shadow: 0 0 0 5px rgba(201, 232, 106, .12);
 }
 
+.tea-logo img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
 .component4-brand h2 {
   margin: 0;
   font-size: 17px;
