@@ -16,8 +16,8 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-[#e7eee8] bg-white/95 shadow-[0_4px_18px_rgba(23,61,46,.06)] backdrop-blur">
       <nav className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-5 md:px-8" aria-label="Main navigation">
         <a className="group flex shrink-0 items-center gap-2.5 text-[19px] font-bold tracking-[.2em] text-[#173d2e]" href="/home">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-[#b9dca4] bg-[#f5faef] shadow-sm"><img className="h-8 w-8 object-contain" src="/teawise-logo.png" alt="TeaCore logo" /></span>
-          Tea<span className="text-lime-700">Core</span>
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-[#b9dca4] bg-[#f5faef] shadow-sm"><img className="h-8 w-8 object-contain" src="/teawise-logo.png" alt="TeaNex AI logo" /></span>
+          Tea<span className="text-lime-700">Nex AI</span>
         </a>
         <div className="hidden items-center gap-1 rounded-full border border-[#e7eee8] bg-[#fbfdf9] p-1 xl:flex">
           {primaryLinks.map(([label, href]) => <a key={href} className="rounded-full px-3 py-2 text-[12px] font-semibold text-[#315444] transition hover:bg-[#edf7e9]" href={href}>{label}</a>)}

@@ -87,6 +87,12 @@ main[style*="IBM Plex Sans"] button[style*="background"]:hover { background: #6D
 .component4-shell .tea-logo { overflow: hidden; background: #f5faef; border-color: #b9dca4; }
 .component4-shell .tea-logo img { width: 27px; height: 27px; object-fit: contain; }
 .component4-shell .component4-topbar { background: rgba(255,255,255,.96); border-bottom-color: #dfeae4; }
+.app-shell .brand-mark + a b { font-size: 0; }
+.app-shell .brand-mark + a b::after { content: 'TeaNex AI'; font-size: 19px; }
+.component4-shell .topbar-user strong { font-size: 0; }
+.component4-shell .topbar-user strong::after { content: 'TeaNex AI'; font-size: 13px; }
+footer a:first-child { font-size: 0; }
+footer a:first-child::after { content: 'TeaNex AI'; font-size: 20px; }
 .home-page .platform-map { overflow: hidden; border: 1px solid #dce9df; border-radius: 14px; background: #173d2e; color: white; }
 .home-page .platform-map-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 20px; border-bottom: 1px solid rgb(255 255 255 / .14); }
 .home-page .platform-map-heading span { color: #c6df86; font: 700 10px 'JetBrains Mono', monospace; letter-spacing: .16em; }

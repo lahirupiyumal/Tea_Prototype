@@ -161,9 +161,9 @@ function LoadingScreen({ progress }) {
       }`}
       role="status"
       aria-live="polite"
-      aria-label="Loading TeaCore"
+      aria-label="Loading TeaNex AI"
     >
-      <img src="/teawise-logo.png" alt="TeaCore logo" className="h-24 w-24 object-contain" />
+      <img src="/teawise-logo.png" alt="TeaNex AI logo" className="h-24 w-24 object-contain" />
       <div className="mt-8 h-1.5 w-48 overflow-hidden rounded-full bg-[#d9eadb]" aria-hidden="true">
         <div
           className="h-full rounded-full bg-[#1d7a59] transition-[width] duration-150 ease-linear motion-reduce:transition-none"
@@ -337,7 +337,7 @@ function Home() {
                 From the field to the <span className="text-[#5f9f3d]">final shipment.</span>
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-[#60766d]">
-                TeaCore brings the Sri Lankan tea value chain into one intelligent workspace, replacing disconnected guesses with timely evidence.
+                TeaNex AI brings the Sri Lankan tea value chain into one intelligent workspace, replacing disconnected guesses with timely evidence.
               </p>
             </div>
 
@@ -364,7 +364,7 @@ function Home() {
 
               <article className="solution-detail" role="tabpanel" aria-label={`${solutionPaths[activeSolution].title} solution`}>
                 <div className="solution-detail-top">
-                  <span className="solution-badge">TEACORE RESPONSE</span>
+                  <span className="solution-badge">TEANEX AI RESPONSE</span>
                   <span className="solution-status"><span /> READY TO EXPLORE</span>
                 </div>
                 <p className="mt-12 text-sm font-semibold uppercase tracking-[.16em] text-[#7a9e4d]">Challenge 0{activeSolution + 1}</p>
