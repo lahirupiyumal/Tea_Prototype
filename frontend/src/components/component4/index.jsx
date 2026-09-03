@@ -21,7 +21,7 @@ function Component4() {
         <aside className="component4-sidebar">
           <BrandMark />
           <p className="nav-kicker">EXPORT INTELLIGENCE</p>
-          <nav aria-label="TeaNex AI navigation">
+          <nav aria-label="TeaCore navigation">
             <NavItem to="." end icon={<LayoutDashboard size={16} />} label="Overview" />
             <NavItem to="batches" icon={<Database size={16} />} label="Tea batches" />
             <NavItem to="price-forecast" icon={<ChartNoAxesCombined size={16} />} label="Price forecast" />
